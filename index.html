@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TripTik · Albany → Pismo Beach · Aug 18–20, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Bree+Serif&family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4ede1;
+    --paper-shadow: #e6dcc6;
+    --ink: #26180b;
+    --ink-soft: #4a3728;
+    --route-red: #c8352c;
+    --route-blue: #2a5b8a;
+    --highlight: rgba(247, 216, 92, 0.55);
+    --stamp-red: #9c2b23;
+    --olive: #6b7a3a;
+    --burnt: #c8621b;
+    --card: #fbf6ea;
+    --map-bg: #faf4e6;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #2a2419;
+    color: var(--ink);
+    font-family: 'Special Elite', 'Courier New', monospace;
+    line-height: 1.45;
+  }
+
+  body {
+    padding: 30px 0;
+    background-image: repeating-linear-gradient(45deg, #2a2419 0 20px, #322a1e 20px 40px);
+  }
+
+  .book {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .page {
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(0,0,0,0.04), transparent 60%),
+      radial-gradient(ellipse at 90% 90%, rgba(0,0,0,0.05), transparent 55%),
+      linear-gradient(180deg, var(--paper) 0%, #ede2cb 100%);
+    width: 820px;
+    min-height: 1080px;
+    margin: 0 auto 40px;
+    padding: 110px 60px 60px 60px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5), inset 0 0 60px rgba(120, 80, 40, 0.06);
+    border-radius: 3px;
+    page-break-after: always;
+  }
+
+  /* Wire-O binding at top, with plastic combs + shadow beneath */
+  .page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 66px;
+    background:
+      /* Shadow the binding casts onto the paper below */
+      linear-gradient(180deg,
+        transparent 74%,
+        rgba(80, 55, 25, 0.22) 86%,
+        rgba(80, 55, 25, 0.10) 94%,
+        transparent 100%),
+      /* Plastic comb rings — 11 across */
+      radial-gradient(ellipse 14px 8px at 42px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 117px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 192px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 267px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 342px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 417px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 492px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 567px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 642px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 717px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      radial-gradient(ellipse 14px 8px at 792px 28px, #fbf7ea 0%, #eee2c6 45%, #b09a70 72%, rgba(50,35,10,0.55) 82%, transparent 90%),
+      /* Base binding strip (tan cardboard) */
+      linear-gradient(180deg, #c4b284 0%, #d4c397 38%, #e2d3ac 78%, rgba(226, 211, 172, 0.15) 100%);
+    border-top: 1px solid rgba(80, 55, 25, 0.25);
+    border-bottom: 1px dashed rgba(80, 55, 25, 0.22);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.20), inset 0 -1px 3px rgba(120, 80, 30, 0.15);
+    z-index: 3;
+  }
+
+  /* Coffee stain — moved to sit on the paper (below the binding) */
+  .page::after {
+    content: "";
+    position: absolute;
+    right: 65px;
+    top: 145px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid rgba(120, 60, 20, 0.10);
+    background: radial-gradient(circle, transparent 45%, rgba(140, 80, 30, 0.05) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Alfa Slab One', 'Bree Serif', serif; margin: 0; color: var(--ink); font-weight: normal; }
+  h1 { font-size: 52px; letter-spacing: -1px; line-height: 0.95; }
+  h2 { font-size: 28px; letter-spacing: 0.5px; }
+  h3 { font-size: 20px; }
+  .serif { font-family: 'Bree Serif', serif; }
+  .stamp {
+    display: inline-block;
+    font-family: 'Alfa Slab One', serif;
+    color: var(--stamp-red);
+    border: 3px solid var(--stamp-red);
+    padding: 6px 14px 4px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    transform: rotate(-4deg);
+    opacity: 0.85;
+    text-transform: uppercase;
+  }
+  .stamp-blue { color: var(--route-blue); border-color: var(--route-blue); }
+  .stamp-olive { color: var(--olive); border-color: var(--olive); }
+
+  .aaa-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    background: var(--route-blue);
+    color: #f4ede1;
+    font-family: 'Alfa Slab One', serif;
+    letter-spacing: 4px;
+    font-size: 18px;
+    border-radius: 4px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+  }
+
+  /* ---------- COVER ---------- */
+  .cover { padding: 140px 60px 60px 60px; text-align: center; }
+  .cover .aaa-badge { margin-bottom: 40px; }
+  .cover h1 { font-size: 96px; letter-spacing: -3px; line-height: 0.9; }
+  .cover .sub { font-size: 22px; letter-spacing: 6px; margin: 20px 0 60px; color: var(--ink-soft); }
+  .cover .route { font-family: 'Bree Serif', serif; font-size: 32px; color: var(--ink); padding: 30px 40px; border-top: 4px double var(--ink); border-bottom: 4px double var(--ink); display: inline-block; margin: 20px auto; }
+  .cover .arrow { color: var(--route-red); font-weight: bold; margin: 0 16px; }
+  .cover .dates { font-size: 22px; margin: 30px 0; letter-spacing: 2px; }
+  .cover .travelers { font-family: 'Special Elite', monospace; font-size: 18px; line-height: 1.9; margin: 40px auto 20px; max-width: 400px; }
+  .cover .travelers .name { display: inline-block; padding: 0 12px; }
+  .cover .stats { display: flex; justify-content: center; gap: 40px; margin-top: 60px; font-size: 14px; letter-spacing: 1px; }
+  .cover .stats div { text-align: center; }
+  .cover .stats .big { font-family: 'Alfa Slab One', serif; font-size: 28px; color: var(--route-red); display: block; }
+  .cover .stamps { position: absolute; top: 100px; right: 40px; }
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--ink); padding-bottom: 12px; margin-bottom: 30px; }
+  .page-header .map-num { font-family: 'Alfa Slab One', serif; background: var(--ink); color: var(--paper); padding: 6px 16px; letter-spacing: 3px; font-size: 16px; }
+  .page-header .segment-title { font-family: 'Bree Serif', serif; font-size: 22px; text-align: right; }
+  .page-header .segment-title small { display: block; font-family: 'Special Elite', monospace; font-size: 13px; color: var(--ink-soft); letter-spacing: 1px; }
+
+  /* ---------- SEGMENT LAYOUT ---------- */
+  .segment { display: grid; grid-template-columns: 240px 1fr; gap: 30px; align-items: start; }
+  .strip-map { background: var(--map-bg); border: 2px solid var(--ink); box-shadow: 3px 3px 0 rgba(0,0,0,0.1); padding: 0; height: 820px; position: relative; overflow: hidden; }
+  .strip-map svg { display: block; width: 100%; height: 100%; }
+
+  /* ---------- POI CARDS ---------- */
+  .poi-list { margin: 0; padding: 0; list-style: none; }
+  .poi { background: var(--card); border: 1px solid rgba(0,0,0,0.15); padding: 12px 14px 12px 44px; margin-bottom: 10px; position: relative; border-radius: 2px; box-shadow: 1px 1px 0 rgba(0,0,0,0.05); }
+  .poi .num { position: absolute; left: 8px; top: 10px; width: 28px; height: 28px; background: var(--route-red); color: var(--paper); border-radius: 3px; text-align: center; line-height: 28px; font-family: 'Alfa Slab One', serif; font-size: 14px; }
+  .poi .name { font-family: 'Bree Serif', serif; font-size: 16px; color: var(--ink); display: inline-block; margin-right: 8px; }
+  .poi .tag { display: inline-block; font-size: 10px; letter-spacing: 1.5px; padding: 2px 6px; background: var(--olive); color: var(--paper); border-radius: 2px; vertical-align: middle; text-transform: uppercase; }
+  .poi .tag.food { background: var(--burnt); }
+  .poi .tag.weird { background: var(--stamp-red); }
+  .poi .tag.sight { background: var(--route-blue); }
+  .poi .tag.stretch { background: #6a4a2a; }
+  .poi .tag.optional { background: #777; }
+  .poi .tag.diner { background: #a04a1e; }
+  .poi .tag.cheap { background: #6b7a3a; }
+  .poi .tag.detour {
+    background: transparent;
+    color: var(--stamp-red);
+    border: 1px dashed var(--stamp-red);
+    padding: 1px 5px;
+    font-weight: bold;
+  }
+  .poi .desc { font-size: 13px; color: var(--ink-soft); margin-top: 5px; line-height: 1.5; }
+  .poi .personal { margin-top: 8px; padding: 6px 10px; background: rgba(247, 216, 92, 0.35); border-left: 3px solid var(--burnt); font-size: 12px; line-height: 1.5; }
+  .poi .personal strong { color: var(--stamp-red); letter-spacing: 1px; }
+  .poi .eats { margin-top: 6px; padding: 6px 10px; background: rgba(200, 98, 27, 0.10); border-left: 3px solid var(--burnt); font-size: 12px; line-height: 1.5; }
+  .poi .eats strong { color: var(--burnt); letter-spacing: 1px; }
+
+  /* ---------- LEGEND PAGE ---------- */
+  .legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+  .legend-card { background: var(--card); border: 2px solid var(--ink); padding: 20px; box-shadow: 3px 3px 0 rgba(0,0,0,0.1); }
+  .legend-card h3 { margin-bottom: 12px; font-family: 'Bree Serif', serif; font-size: 18px; }
+  .legend-card p { font-size: 14px; margin: 6px 0; }
+  .tag-row { margin: 8px 0; font-size: 13px; display: flex; align-items: center; }
+  .tag-row .tag { display: inline-block; font-size: 10px; letter-spacing: 1.5px; padding: 2px 6px; color: var(--paper); border-radius: 2px; text-transform: uppercase; margin-right: 10px; min-width: 62px; text-align: center; }
+  .tag-row .tag.food { background: var(--burnt); }
+  .tag-row .tag.weird { background: var(--stamp-red); }
+  .tag-row .tag.sight { background: var(--route-blue); }
+  .tag-row .tag.stretch { background: #6a4a2a; }
+  .tag-row .tag.optional { background: #777; }
+  .tag-row .tag.default { background: var(--olive); }
+  .tag-row .tag.diner { background: #a04a1e; }
+  .tag-row .tag.cheap { background: #6b7a3a; }
+  .tag-row .tag.detour { background: transparent; color: var(--stamp-red); border: 1px dashed var(--stamp-red); padding: 1px 5px; font-weight: bold; }
+
+  .note { background: rgba(247, 216, 92, 0.35); border: 1px dashed var(--ink-soft); padding: 12px 16px; margin: 20px 0; font-size: 13px; line-height: 1.55; }
+  .note strong { font-family: 'Bree Serif', serif; }
+
+  /* ---------- CITY FOCUS PAGES ---------- */
+  .city-hero { background: var(--card); border: 2px solid var(--ink); padding: 24px 30px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: baseline; }
+  .city-hero .name { font-family: 'Alfa Slab One', serif; font-size: 34px; letter-spacing: 1px; }
+  .city-hero .meta { font-family: 'Special Elite', monospace; font-size: 13px; text-align: right; color: var(--ink-soft); letter-spacing: 1px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .col-title { font-family: 'Bree Serif', serif; font-size: 18px; border-bottom: 2px solid var(--ink); padding-bottom: 4px; margin-bottom: 12px; }
+
+  /* ---------- LOGISTICS BOX ---------- */
+  .logistics { background: var(--ink); color: var(--paper); padding: 20px 24px; border-radius: 4px; margin: 20px 0; font-family: 'Special Elite', monospace; font-size: 14px; line-height: 1.7; }
+  .logistics h3 { color: var(--paper); font-family: 'Bree Serif', serif; margin-bottom: 8px; font-size: 18px; letter-spacing: 1px; }
+  .logistics .row { display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.2); padding: 4px 0; }
+  .logistics .row:last-child { border-bottom: none; }
+
+  /* ---------- PRINT ---------- */
+  @media print {
+    body { background: white; padding: 0; background-image: none; }
+    .page { box-shadow: none; margin: 0; width: 8.5in; min-height: 11in; padding: 1in 0.6in 0.6in 0.6in; page-break-after: always; }
+    .page::before { box-shadow: 0 3px 6px rgba(0,0,0,0.15); }
+    .no-print { display: none; }
+  }
+
+  .controls { position: fixed; bottom: 20px; right: 20px; background: var(--paper); padding: 12px 18px; border-radius: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); font-family: 'Special Elite', monospace; z-index: 100; }
+  .controls button { background: var(--route-red); color: var(--paper); border: none; padding: 8px 16px; font-family: 'Special Elite', monospace; font-size: 14px; border-radius: 20px; cursor: pointer; letter-spacing: 1px; }
+  .controls button:hover { background: var(--stamp-red); }
+
+  /* ---------- LINKS ---------- */
+  a {
+    color: #4a3020;
+    text-decoration: underline;
+    text-decoration-color: rgba(74, 55, 40, 0.55);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+  }
+  a:hover {
+    color: var(--route-red);
+    text-decoration-color: var(--route-red);
+  }
+  .poi .name a, .col-title a { color: inherit; }
+  .logistics a { color: #f4d494; text-decoration-color: rgba(244, 212, 148, 0.55); }
+  .logistics a:hover { color: #ffe680; }
+</style>
+</head>
+<body>
+
+<div class="book">
+
+<!-- ============================ COVER ============================ -->
+<div class="page cover">
+  <div class="stamps">
+    <div class="stamp">Personalized</div>
+    <div style="margin-top:14px;"><div class="stamp stamp-blue">Route Marked</div></div>
+  </div>
+
+  <div class="aaa-badge">◆ TRIPTIK ◆</div>
+  <h1>Albany<br/>to Pismo</h1>
+  <div class="sub">P E R S O N A L I Z E D &nbsp; T R I P &nbsp; R O U T I N G</div>
+
+  <div class="route">
+    Albany, CA <span class="arrow">→</span> Paso Robles <span class="arrow">→</span> Avila Beach <span class="arrow">→</span> Pismo Beach
+  </div>
+
+  <div class="dates">TUE AUG 18 &nbsp;·&nbsp; WED AUG 19 &nbsp;·&nbsp; THU AUG 20, 2026</div>
+
+  <div class="travelers">
+    <div class="name">ERIC ELKINS</div> · <div class="name">KAREN ELKINS COHEN</div><br/>
+    <div class="name">AARON BALICK</div>
+  </div>
+
+  <div class="stats">
+    <div><span class="big">~285</span>ROAD MILES</div>
+    <div><span class="big">2</span>NIGHTS OUT</div>
+    <div><span class="big">3</span>SOAKING SPOTS</div>
+    <div><span class="big">1</span>REUNION AHEAD</div>
+  </div>
+
+  <div style="margin-top: 60px; font-size: 13px; letter-spacing: 3px; color: var(--ink-soft);">
+    ISSUED BY THE OFFICE OF ERIC · PLANNING DEPT.
+  </div>
+</div>
+
+<!-- ============================ HOW TO USE ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">KEY</div>
+    <div class="segment-title">How to Use This TripTik<small>Legend · Icons · Personalization</small></div>
+  </div>
+
+  <p style="font-size: 15px; line-height: 1.7;">
+    Each map pairs a <strong>strip route</strong> with numbered stops. Numbers on the map match the cards on the
+    right. Orange highlighter marks your route. Left column shows miles from origin, right column shows miles
+    remaining. Yellow-highlighted callout boxes are <em>personalized</em>.
+  </p>
+
+  <div class="legend-grid">
+    <div class="legend-card">
+      <h3>Stop Categories</h3>
+      <div class="tag-row"><span class="tag diner">DINER</span> Classic American breakfast joint</div>
+      <div class="tag-row"><span class="tag cheap">CHEAP</span> Under-$15 regional plate</div>
+      <div class="tag-row"><span class="tag food">FOOD</span> Something worth eating</div>
+      <div class="tag-row"><span class="tag sight">SIGHT</span> A stop worth the pull-off</div>
+      <div class="tag-row"><span class="tag weird">WEIRD</span> Roadside Americana</div>
+      <div class="tag-row"><span class="tag stretch">STRETCH</span> Get out & move</div>
+      <div class="tag-row"><span class="tag optional">OPTIONAL</span> Only if time & mood align</div>
+      <div class="tag-row"><span class="tag detour">DETOUR +XX RT</span> Round-trip driving-only cost</div>
+    </div>
+
+    <div class="legend-card">
+      <h3>Personalized For</h3>
+      <p><strong style="color:var(--stamp-red)">ERIC</strong> — World traveler, food obsessive, UCSC banana slug in his heart. Prefers non-pork proteins at diners (chicken sausage, turkey, corned beef).</p>
+      <p><strong style="color:var(--stamp-red)">AARON</strong> — London psychotherapist. American diner breakfast is a highlight; sharp eye for weird Americana.</p>
+      <p><strong style="color:var(--stamp-red)">KAREN</strong> — Nature, tide pools, old California history, textiles + gardens. Off-duty from family responsibilities on this trip. Nudge her to loosen up.</p>
+    </div>
+  </div>
+
+  <div class="logistics" style="margin-top: 30px;">
+    <h3>TRIP AT A GLANCE</h3>
+    <div class="row"><span>TUE AUG 18</span><span>ALBANY → PASO ROBLES · ~230 mi · ~4 hrs driving</span></div>
+    <div class="row"><span>OVERNIGHT</span><span><a href="https://pasoroblesinn.com/" target="_blank" rel="noopener">Paso Robles Inn</a> · downtown wine country</span></div>
+    <div class="row"><span>WED AUG 19</span><span>PASO → AVILA BEACH · ~40 mi · ~50 min</span></div>
+    <div class="row"><span>OVERNIGHT</span><span><a href="https://sycamoresprings.com/" target="_blank" rel="noopener">Sycamore Mineral Springs</a> · private tub on the terrace</span></div>
+    <div class="row"><span>THU AUG 20</span><span>AVILA → PISMO BEACH · ~15 mi · ARRIVE BY 1:00 PM</span></div>
+  </div>
+
+  <div class="note">
+    <strong>Detour times are drive-only, round-trip.</strong> They don't include how long you actually spend at
+    the stop. Add the two: a 15-min-RT stop where you linger 45 min at the property is a 60-minute chunk.
+  </div>
+</div>
+
+<!-- ============================ MAP 1: Albany → Gilroy ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 1</div>
+    <div class="segment-title">Albany → Gilroy<small>87 mi · I-880 → US-101 · Peak commute out, then rural</small></div>
+  </div>
+
+  <div class="segment">
+    <div class="strip-map">
+      <svg viewBox="0 0 240 800" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="marker" x="-4%" y="-4%" width="108%" height="108%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+          </filter>
+        </defs>
+        <!-- header bar -->
+        <text x="10" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" font-weight="bold">ALBANY, CA</text>
+        <text x="150" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" text-anchor="start">. . . . . . . . . .</text>
+        <text x="230" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" text-anchor="end" font-weight="bold">GILROY, CA</text>
+        <line x1="8" y1="22" x2="232" y2="22" stroke="#c8352c" stroke-width="0.6"/>
+        <text x="232" y="36" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">1</text>
+
+        <!-- ===== BASE GEOGRAPHY ===== -->
+        <!-- San Francisco Bay (west, tapered south) -->
+        <path d="M -5 25 L 92 25 L 91 60 L 88 100 L 82 145 L 75 195 L 68 240 L 62 280 L 65 320 L 75 350 L 92 360 L -5 360 Z"
+              fill="rgba(42,91,138,0.22)" stroke="rgba(42,91,138,0.4)" stroke-width="0.5"/>
+        <text x="46" y="150" font-size="9" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">SAN</text>
+        <text x="46" y="162" font-size="9" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">FRANCISCO</text>
+        <text x="46" y="174" font-size="9" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">BAY</text>
+        <!-- Peninsula labels far left -->
+        <text x="14" y="82" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a">S.F.</text>
+        <text x="14" y="195" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a">San Mateo</text>
+        <text x="14" y="280" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a">Palo Alto</text>
+        <!-- East Bay Hills / Diablo Range -->
+        <path d="M 245 25 Q 205 55 200 120 T 195 240 Q 205 320 195 400 T 200 490 Q 188 580 200 680 L 245 720 L 245 25 Z"
+              fill="rgba(200,180,140,0.18)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.5">
+          <line x1="207" y1="80" x2="213" y2="98"/>
+          <line x1="216" y1="130" x2="222" y2="148"/>
+          <line x1="207" y1="180" x2="213" y2="198"/>
+          <line x1="216" y1="230" x2="222" y2="248"/>
+          <line x1="207" y1="280" x2="213" y2="298"/>
+          <line x1="216" y1="330" x2="222" y2="348"/>
+          <line x1="207" y1="380" x2="213" y2="398"/>
+          <line x1="216" y1="430" x2="222" y2="448"/>
+          <line x1="207" y1="480" x2="213" y2="498"/>
+          <line x1="216" y1="530" x2="222" y2="548"/>
+          <line x1="207" y1="580" x2="213" y2="598"/>
+          <line x1="216" y1="630" x2="222" y2="648"/>
+        </g>
+        <text x="221" y="430" font-size="6" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" transform="rotate(-90 221 430)">Diablo Range</text>
+
+        <!-- ===== SIDE ROAD NETWORK ===== -->
+        <!-- I-580 east from Oakland (splits to Livermore) -->
+        <path d="M 118 100 Q 148 105 178 100" stroke="#8a7854" stroke-width="1.4" fill="none"/>
+        <g transform="translate(180,100)">
+          <path d="M -10 -6 L 10 -6 L 10 6 L -10 6 Z" fill="#2a5b8a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">580</text>
+        </g>
+        <!-- SR-92 San Mateo Bridge west -->
+        <path d="M 118 218 L 68 220 L 30 215" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <g transform="translate(70,218)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">92</text>
+        </g>
+        <text x="47" y="232" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">San Mateo Br</text>
+        <!-- SR-84 Dumbarton Bridge west -->
+        <path d="M 122 290 L 68 292 L 30 288" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <g transform="translate(70,290)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">84</text>
+        </g>
+        <text x="47" y="304" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Dumbarton Br</text>
+        <!-- I-680 east (from Fremont) -->
+        <path d="M 128 315 Q 158 320 188 305" stroke="#8a7854" stroke-width="1.4" fill="none"/>
+        <g transform="translate(190,305)">
+          <path d="M -10 -6 L 10 -6 L 10 6 L -10 6 Z" fill="#2a5b8a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">680</text>
+        </g>
+        <!-- I-280 north from San Jose -->
+        <path d="M 118 410 Q 92 415 72 410" stroke="#8a7854" stroke-width="1.2" fill="none"/>
+        <g transform="translate(72,410)">
+          <path d="M -10 -6 L 10 -6 L 10 6 L -10 6 Z" fill="#2a5b8a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">280</text>
+        </g>
+        <!-- SR-85 south (bypass loop) -->
+        <path d="M 128 460 Q 148 490 138 545 Q 128 570 122 555" stroke="#8a7854" stroke-width="1" fill="none" opacity="0.7"/>
+        <g transform="translate(148,510)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">85</text>
+        </g>
+        <!-- SR-25 south from Gilroy (to Hollister) -->
+        <path d="M 118 720 Q 148 728 180 730" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <g transform="translate(183,730)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">25</text>
+        </g>
+        <text x="200" y="742" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Hollister →</text>
+
+        <!-- left mileage column -->
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold">
+          <text x="10" y="60">0</text>
+          <text x="10" y="190">20</text>
+          <text x="10" y="320">40</text>
+          <text x="10" y="450">60</text>
+          <text x="10" y="580">80</text>
+          <text x="10" y="740">87</text>
+        </g>
+        <!-- right mileage column (miles remaining) -->
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold" text-anchor="end">
+          <text x="232" y="60">87</text>
+          <text x="232" y="190">67</text>
+          <text x="232" y="320">47</text>
+          <text x="232" y="450">27</text>
+          <text x="232" y="580">7</text>
+          <text x="232" y="740">0</text>
+        </g>
+
+        <!-- HAND-DRAWN YELLOW HIGHLIGHTER (3 layered strokes + wobble) -->
+        <g filter="url(#marker)">
+          <path d="M 120 55 Q 130 100 118 155 T 125 240 Q 118 310 130 370 T 122 460 Q 132 530 118 600 T 125 720"
+                fill="none" stroke="rgba(255,235,55,0.28)" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 120 55 Q 130 100 118 155 T 125 240 Q 118 310 130 370 T 122 460 Q 132 530 118 600 T 125 720"
+                fill="none" stroke="rgba(252,220,40,0.38)" stroke-width="18" stroke-linecap="round"
+                transform="translate(1.5,-0.5)"/>
+          <path d="M 120 55 Q 130 100 118 155 T 125 240 Q 118 310 130 370 T 122 460 Q 132 530 118 600 T 125 720"
+                fill="none" stroke="rgba(245,205,25,0.30)" stroke-width="14" stroke-linecap="round"
+                transform="translate(-1,1)"/>
+        </g>
+        <!-- Underlying route -->
+        <path d="M 120 55 Q 130 100 118 155 T 125 240 Q 118 310 130 370 T 122 460 Q 132 530 118 600 T 125 720"
+              fill="none" stroke="#26180b" stroke-width="1.8"/>
+        <!-- Hand-drawn highlighter arrow at destination -->
+        <g filter="url(#marker)" opacity="0.80">
+          <path d="M 108 704 L 122 735 L 138 704 L 122 720 Z"
+                fill="rgba(250,215,30,0.60)" stroke="rgba(230,190,20,0.55)" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- SR-152 detour east (to <a href="https://www.casadefruta.com/" target="_blank" rel="noopener">Casa de Fruta</a>) -->
+        <path d="M 128 500 Q 160 495 200 505" stroke="#26180b" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+        <g transform="translate(200,502)">
+          <rect x="-11" y="-6" width="22" height="12" fill="#6b7a3a" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">152</text>
+        </g>
+
+        <!-- HIGHWAY SHIELDS on route -->
+        <!-- I-880 near top -->
+        <g transform="translate(105,90)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#2a5b8a" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">880</text>
+        </g>
+        <!-- US-101 mid -->
+        <g transform="translate(140,320)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+        <!-- US-101 near Gilroy -->
+        <g transform="translate(105,640)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+
+        <!-- CITY LABELS with dots -->
+        <g font-family="Bree Serif" fill="#c8352c">
+          <!-- ALBANY start -->
+          <circle cx="120" cy="55" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="120" y="45" text-anchor="middle" font-size="11" font-weight="bold">ALBANY</text>
+          <!-- Oakland -->
+          <circle cx="118" cy="130" r="2" fill="#26180b"/>
+          <text x="90" y="133" text-anchor="end" font-size="8" fill="#26180b">Oakland</text>
+          <!-- Fremont -->
+          <circle cx="130" cy="210" r="2" fill="#26180b"/>
+          <text x="150" y="213" font-size="8" fill="#26180b">Fremont</text>
+          <!-- San Jose (bigger) -->
+          <circle cx="118" cy="290" r="3" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="88" y="293" text-anchor="end" font-size="9" font-weight="bold" fill="#c8352c">San Jose</text>
+          <!-- Morgan Hill -->
+          <circle cx="130" cy="420" r="2" fill="#26180b"/>
+          <text x="150" y="423" font-size="8" fill="#26180b">Morgan Hill</text>
+          <!-- Coyote -->
+          <circle cx="120" cy="370" r="1.5" fill="#26180b"/>
+          <text x="98" y="373" text-anchor="end" font-size="7" fill="#4a3728">Coyote</text>
+          <!-- San Martin -->
+          <circle cx="125" cy="470" r="1.5" fill="#26180b"/>
+          <text x="152" y="472" font-size="7" fill="#4a3728">San Martin</text>
+          <!-- <a href="https://www.casadefruta.com/" target="_blank" rel="noopener">Casa de Fruta</a> (end of detour) -->
+          <circle cx="215" cy="500" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <!-- Gilroy -->
+          <circle cx="118" cy="720" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="118" y="740" text-anchor="middle" font-size="11" font-weight="bold">GILROY</text>
+        </g>
+
+        <!-- POI NUMBER BADGES (red squares) -->
+        <g font-family="Alfa Slab One" font-size="9" fill="#f4ede1">
+          <rect x="145" y="60" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="152" y="70" text-anchor="middle">1</text>
+
+          <rect x="145" y="410" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="152" y="420" text-anchor="middle">2</text>
+
+          <rect x="200" y="480" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="207" y="490" text-anchor="middle">3</text>
+
+          <rect x="145" y="700" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="152" y="710" text-anchor="middle">4</text>
+
+          <rect x="70" y="700" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="77" y="710" text-anchor="middle">5</text>
+        </g>
+
+        <!-- INFO BOX -->
+        <g>
+          <rect x="15" y="245" width="82" height="52" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <text x="19" y="256" font-size="6.5" font-family="Special Elite" fill="#26180b">I-880 → US-101</text>
+          <text x="19" y="266" font-size="6" font-family="Special Elite" fill="#4a3728">. . . the East Bay</text>
+          <text x="19" y="274" font-size="6" font-family="Special Elite" fill="#4a3728">unspools into the</text>
+          <text x="19" y="282" font-size="6" font-family="Special Elite" fill="#4a3728">South Bay, then</text>
+          <text x="19" y="290" font-size="6" font-family="Special Elite" fill="#4a3728">into garlic country.</text>
+        </g>
+
+        <!-- compass rose bottom -->
+        <g transform="translate(35, 660)">
+          <circle cx="0" cy="0" r="14" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <polygon points="0,-10 3,0 0,10 -3,0" fill="#c8352c"/>
+          <text x="0" y="-16" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#26180b">N</text>
+        </g>
+
+        <!-- watch speed limit stamp -->
+        <g transform="translate(120,570) rotate(-8)">
+          <text x="0" y="0" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#9c2b23" opacity="0.6">SPEED STRICTLY</text>
+          <text x="0" y="10" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#9c2b23" opacity="0.6">ENFORCED</text>
+        </g>
+
+        <!-- footer page markers -->
+        <text x="10" y="790" font-size="8" font-family="Bree Serif" fill="#c8352c">75-10</text>
+        <text x="230" y="790" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">1</text>
+      </svg>
+    </div>
+
+    <ul class="poi-list">
+      <li class="poi">
+        <div class="num">1</div>
+        <div class="name"><a href="https://rickandanns.com/" target="_blank" rel="noopener">Rick & Ann's</a> OR <a href="https://oleswaffleshop.com/" target="_blank" rel="noopener">Ole's Waffle Shop</a></div>
+        <span class="tag diner">DINER</span>
+        <div class="desc">Two classic diners on your way to the freeway. <strong><a href="https://rickandanns.com/" target="_blank" rel="noopener">Rick & Ann's</a></strong> (Berkeley, near Claremont) — chicken-apple sausage, corned beef hash, huevos rancheros. <strong><a href="https://oleswaffleshop.com/" target="_blank" rel="noopener">Ole's Waffle Shop</a></strong> (Alameda) — 1927, sourdough waffles, more retro. Either sets the tone.</div>
+        <div class="personal"><strong>FOR ERIC:</strong> both offer chicken sausage / turkey / corned beef — no pork required. <a href="https://rickandanns.com/" target="_blank" rel="noopener">Rick & Ann's</a> is a five-minute detour from Karen's Albany driveway.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">2</div>
+        <div class="name">Morgan Hill / San Martin — <a href="https://barefootcoffee.com/" target="_blank" rel="noopener">Barefoot Coffee</a> + fruit stands</div>
+        <span class="tag food">FOOD</span>
+        <span class="tag cheap">CHEAP</span>
+        <div class="desc">Last specialty coffee before ag country. Along San Martin Ave and further south, roadside stands sell late-summer stone fruit — Frog Hollow-quality peaches at farm-stand prices.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">3</div>
+        <div class="name"><a href="https://www.casadefruta.com/" target="_blank" rel="noopener">Casa de Fruta</a> (SR-152 east)</div>
+        <span class="tag weird">WEIRD</span>
+        <span class="tag detour">DETOUR +25 min RT</span>
+        <div class="desc">Fruit stand → theme park → time capsule since 1908. Wine tasting, jerky, dried-fruit walls, a carousel, wandering peacock. Their café does a fine cheap breakfast if you skip <a href="https://rickandanns.com/" target="_blank" rel="noopener">Rick & Ann's</a> — biscuits and country gravy is the move but they also do plain eggs and corned beef.</div>
+        <div class="personal"><strong>FOR AARON:</strong> unfiltered California-Americana. Photos guaranteed. Also decent honeys.</div>
+        <div class="personal"><strong>FOR KAREN:</strong> The nursery in back, the succulent bins, the wall of dried fruit and preserves — this is your kind of stop. Buy a plant that doesn't fit in the car.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">4</div>
+        <div class="name">Gilroy — garlic country</div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag weird">WEIRD</span>
+        <div class="desc">You'll smell it before you see it. In August the fields are being harvested. <a href="https://www.christopherranch.com/" target="_blank" rel="noopener">Christopher Ranch</a> (headquartered here) sells to the public.</div>
+        <div class="eats"><strong>EAT CHEAP:</strong> <a href="https://www.garlicworld.com/" target="_blank" rel="noopener">Garlic World</a> for garlic ice cream (cheap, weird, mandatory) and garlic braids to take home. Downtown taquerias line Monterey St — <strong><a href="https://www.google.com/maps?q=Taqueria+Guerrero+Gilroy+CA" target="_blank" rel="noopener">Taqueria Guerrero</a></strong> is the sleeper: al pastor for the group, birria if it's the weekend, machaca-and-eggs breakfast plates any morning.</div>
+        <div class="personal"><strong>FOR ERIC:</strong> Gilroy Garlic Festival was August most years — worth a quick check to see if it's on the week of the 18th.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">5</div>
+        <div class="name"><a href="https://www.google.com/maps?q=Original+Jacks+Restaurant+Gilroy+CA" target="_blank" rel="noopener">Original Jack's Restaurant</a> (downtown Gilroy)</div>
+        <span class="tag diner">DINER</span>
+        <span class="tag cheap">CHEAP</span>
+        <div class="desc">A hash-and-eggs, red-vinyl-booth kind of place open since 1949. Big pours of coffee, corned beef hash, and chicken-fried steak. Worth the wait on a summer morning if you skipped a Bay Area diner and want the real deal.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ MAP 2: Gilroy → Salinas ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 2</div>
+    <div class="segment-title">Gilroy → Salinas<small>30 mi · US-101 · Mission country, Steinbeck country</small></div>
+  </div>
+
+  <div class="segment">
+    <div class="strip-map">
+      <svg viewBox="0 0 240 800" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="marker" x="-4%" y="-4%" width="108%" height="108%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+          </filter>
+        </defs>
+        <text x="10" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" font-weight="bold">GILROY, CA</text>
+        <text x="150" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c">. . . . . . . . . .</text>
+        <text x="230" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" text-anchor="end" font-weight="bold">SALINAS, CA</text>
+        <line x1="8" y1="22" x2="232" y2="22" stroke="#c8352c" stroke-width="0.6"/>
+        <text x="232" y="36" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">2</text>
+
+        <!-- ===== BASE GEOGRAPHY ===== -->
+        <!-- Gabilan/Diablo Range east (right side) -->
+        <path d="M 245 30 Q 200 60 195 130 T 190 260 Q 200 350 190 470 T 195 620 Q 185 700 195 780 L 245 780 L 245 30 Z"
+              fill="rgba(200,180,140,0.18)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.5">
+          <line x1="205" y1="100" x2="212" y2="118"/>
+          <line x1="215" y1="150" x2="222" y2="168"/>
+          <line x1="205" y1="200" x2="212" y2="218"/>
+          <line x1="215" y1="250" x2="222" y2="268"/>
+          <line x1="205" y1="330" x2="212" y2="348"/>
+          <line x1="215" y1="400" x2="222" y2="418"/>
+          <line x1="205" y1="480" x2="212" y2="498"/>
+          <line x1="215" y1="560" x2="222" y2="578"/>
+          <line x1="205" y1="640" x2="212" y2="658"/>
+        </g>
+        <text x="221" y="380" font-size="6" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" transform="rotate(-90 221 380)">Gabilan Range</text>
+
+        <!-- Santa Cruz Mtns west (left side) -->
+        <path d="M -5 30 Q 55 60 60 140 T 55 280 Q 65 380 55 490 L -5 500 Z"
+              fill="rgba(200,180,140,0.12)" stroke="#c8b898" stroke-width="0.4"/>
+        <text x="30" y="120" font-size="5" font-family="Bree Serif" fill="#6b5a3a" font-style="italic">Santa Cruz</text>
+        <text x="30" y="130" font-size="5" font-family="Bree Serif" fill="#6b5a3a" font-style="italic">Mtns</text>
+
+        <!-- Monterey Bay bottom-left corner -->
+        <path d="M -5 540 L 50 545 Q 60 620 45 720 L -5 720 Z"
+              fill="rgba(42,91,138,0.20)" stroke="rgba(42,91,138,0.35)" stroke-width="0.5"/>
+        <text x="15" y="620" font-size="7" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Monterey</text>
+        <text x="15" y="631" font-size="7" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Bay</text>
+
+        <!-- Pajaro River (crossing east-west near mid-map) -->
+        <path d="M 245 300 Q 200 305 150 302 T 60 310 Q 25 315 -5 315" fill="none" stroke="#2a5b8a" stroke-width="1.2" opacity="0.5"/>
+        <text x="170" y="298" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Pajaro R.</text>
+
+        <!-- Salinas River emerging at south -->
+        <path d="M 175 600 Q 165 660 175 720 T 165 780" fill="none" stroke="#2a5b8a" stroke-width="1.2" opacity="0.5"/>
+        <text x="180" y="670" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Salinas R.</text>
+
+        <!-- Elkhorn Slough -->
+        <path d="M 55 480 Q 30 490 15 505 L 5 525" fill="none" stroke="#2a5b8a" stroke-width="0.8" opacity="0.5"/>
+        <text x="30" y="470" font-size="4.5" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Elkhorn Slough</text>
+
+        <!-- Lettuce fields hatching -->
+        <g opacity="0.15" stroke="#6b7a3a" stroke-width="0.4">
+          <line x1="140" y1="500" x2="188" y2="500"/>
+          <line x1="140" y1="515" x2="188" y2="515"/>
+          <line x1="140" y1="530" x2="188" y2="530"/>
+          <line x1="140" y1="545" x2="188" y2="545"/>
+          <line x1="140" y1="560" x2="188" y2="560"/>
+          <line x1="140" y1="575" x2="188" y2="575"/>
+          <line x1="140" y1="590" x2="188" y2="590"/>
+        </g>
+        <text x="165" y="580" font-size="5" font-family="Bree Serif" fill="#6b7a3a" font-style="italic">lettuce fields</text>
+
+        <!-- ===== SIDE ROADS ===== -->
+        <!-- SR-129 west to Watsonville -->
+        <path d="M 118 180 Q 85 185 40 190" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <g transform="translate(45,190)">
+          <rect x="-10" y="-5" width="20" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">129</text>
+        </g>
+        <text x="55" y="204" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Watsonville</text>
+
+        <!-- SR-156 west to Castroville (second branch, further south) -->
+        <path d="M 122 415 Q 88 420 45 425" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <g transform="translate(48,425)">
+          <rect x="-10" y="-5" width="20" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">156</text>
+        </g>
+        <text x="60" y="438" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Castroville · Marina</text>
+
+        <!-- SR-183 west from Salinas to Castroville -->
+        <path d="M 122 680 Q 80 690 45 700" stroke="#8a7854" stroke-width="0.9" fill="none"/>
+        <g transform="translate(48,700)">
+          <rect x="-10" y="-5" width="20" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">183</text>
+        </g>
+
+        <!-- SR-25 continues south from Gilroy area (already in Map 1, referenced) -->
+        <path d="M 118 65 Q 145 72 175 78" stroke="#8a7854" stroke-width="0.9" fill="none"/>
+        <g transform="translate(178,78)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">25</text>
+        </g>
+        <text x="196" y="90" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Hollister</text>
+
+        <!-- mileage -->
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold">
+          <text x="10" y="60">87</text>
+          <text x="10" y="220">97</text>
+          <text x="10" y="380">107</text>
+          <text x="10" y="540">117</text>
+          <text x="10" y="740">117</text>
+        </g>
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold" text-anchor="end">
+          <text x="232" y="60">30</text>
+          <text x="232" y="220">20</text>
+          <text x="232" y="380">10</text>
+          <text x="232" y="540">5</text>
+          <text x="232" y="740">0</text>
+        </g>
+
+        <!-- HAND-DRAWN YELLOW HIGHLIGHTER -->
+        <g filter="url(#marker)">
+          <path d="M 118 55 Q 130 130 115 200 T 120 320 Q 130 420 118 520 T 125 720"
+                fill="none" stroke="rgba(255,235,55,0.28)" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 118 55 Q 130 130 115 200 T 120 320 Q 130 420 118 520 T 125 720"
+                fill="none" stroke="rgba(252,220,40,0.38)" stroke-width="18" stroke-linecap="round"
+                transform="translate(1.5,-0.5)"/>
+          <path d="M 118 55 Q 130 130 115 200 T 120 320 Q 130 420 118 520 T 125 720"
+                fill="none" stroke="rgba(245,205,25,0.30)" stroke-width="14" stroke-linecap="round"
+                transform="translate(-1,1)"/>
+        </g>
+        <path d="M 118 55 Q 130 130 115 200 T 120 320 Q 130 420 118 520 T 125 720"
+              fill="none" stroke="#26180b" stroke-width="1.8"/>
+        <g filter="url(#marker)" opacity="0.80">
+          <path d="M 108 704 L 122 735 L 138 704 L 122 720 Z"
+                fill="rgba(250,215,30,0.60)" stroke="rgba(230,190,20,0.55)" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- SJB DETOUR west (SR-156) -->
+        <path d="M 115 200 Q 80 205 45 210" stroke="#26180b" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+        <g transform="translate(45,208)">
+          <rect x="-11" y="-6" width="22" height="12" fill="#6b7a3a" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">156</text>
+        </g>
+
+        <!-- Prunedale side -->
+        <path d="M 130 420 L 175 415" stroke="#666" stroke-width="0.8" fill="none"/>
+
+        <!-- Highway shields -->
+        <g transform="translate(100,120)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+        <g transform="translate(140,610)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+
+        <!-- Cities -->
+        <g font-family="Bree Serif" fill="#c8352c">
+          <circle cx="118" cy="55" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="118" y="45" text-anchor="middle" font-size="11" font-weight="bold">GILROY</text>
+
+          <circle cx="42" cy="210" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="42" y="200" text-anchor="middle" font-size="8" fill="#26180b">San Juan</text>
+          <text x="42" y="228" text-anchor="middle" font-size="8" fill="#26180b">Bautista</text>
+
+          <circle cx="180" cy="415" r="2" fill="#26180b"/>
+          <text x="200" y="418" font-size="8" fill="#26180b">Prunedale</text>
+
+          <circle cx="120" cy="620" r="1.5" fill="#26180b"/>
+          <text x="100" y="622" text-anchor="end" font-size="7" fill="#4a3728">Boronda</text>
+
+          <circle cx="122" cy="720" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="122" y="740" text-anchor="middle" font-size="11" font-weight="bold">SALINAS</text>
+        </g>
+
+        <!-- POI badges -->
+        <g font-family="Alfa Slab One" font-size="9" fill="#f4ede1">
+          <rect x="18" y="228" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="25" y="238" text-anchor="middle">6</text>
+
+          <rect x="200" y="408" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="207" y="418" text-anchor="middle">7</text>
+
+          <rect x="200" y="490" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="207" y="500" text-anchor="middle">8</text>
+
+          <rect x="145" y="700" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="152" y="710" text-anchor="middle">9</text>
+
+          <rect x="70" y="700" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="77" y="710" text-anchor="middle">10</text>
+        </g>
+
+        <!-- info box -->
+        <g>
+          <rect x="15" y="300" width="82" height="56" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <text x="19" y="311" font-size="6.5" font-family="Special Elite" fill="#26180b">US-101 South</text>
+          <text x="19" y="321" font-size="6" font-family="Special Elite" fill="#4a3728">. . . traverses the</text>
+          <text x="19" y="329" font-size="6" font-family="Special Elite" fill="#4a3728">strawberry belt and</text>
+          <text x="19" y="337" font-size="6" font-family="Special Elite" fill="#4a3728">the salad bowl of</text>
+          <text x="19" y="345" font-size="6" font-family="Special Elite" fill="#4a3728">America. (0:30)</text>
+        </g>
+
+        <!-- compass -->
+        <g transform="translate(35, 640)">
+          <circle cx="0" cy="0" r="14" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <polygon points="0,-10 3,0 0,10 -3,0" fill="#c8352c"/>
+          <text x="0" y="-16" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#26180b">N</text>
+        </g>
+
+        <text x="10" y="790" font-size="8" font-family="Bree Serif" fill="#c8352c">75-10</text>
+        <text x="230" y="790" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">2</text>
+      </svg>
+    </div>
+
+    <ul class="poi-list">
+      <li class="poi">
+        <div class="num">6</div>
+        <div class="name">San Juan Bautista (SR-156 west)</div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag food">FOOD</span>
+        <span class="tag detour">DETOUR +15 min RT</span>
+        <div class="desc">3rd Street looks like it did in 1900. <a href="https://www.google.com/maps?q=Mission+San+Juan+Bautista" target="_blank" rel="noopener">Mission San Juan Bautista</a> is one of the oldest and prettiest in the chain. Lunch at <strong><a href="https://jardinesrestaurant.com/" target="_blank" rel="noopener">Jardines de San Juan</a></strong> — shaded courtyard, enchiladas, margaritas, mariachi some days.</div>
+        <div class="personal"><strong>FOR AARON:</strong> Hitchcock filmed the climactic tower scene of <em>Vertigo</em> here. The tower he showed doesn't exist — matte-painted onto the roof. Placard on-site.</div>
+        <div class="personal"><strong>FOR KAREN:</strong> This might be your favorite stop of the whole trip. Historic downtown preserved from 1900, mission courtyard garden, small textile and craft shops on 3rd Street. Buy something small and unnecessary and enjoy it.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">7</div>
+        <div class="name">Prunedale — <a href="https://www.google.com/maps?q=Marina+Foods+Prunedale+CA" target="_blank" rel="noopener">Marina Foods</a></div>
+        <span class="tag food">FOOD</span>
+        <span class="tag cheap">CHEAP</span>
+        <span class="tag optional">OPTIONAL</span>
+        <div class="desc">Filipino grocery on 101 with a hot food counter. Lumpia, pancit, ube everything. Weirdly ambitious for a highway stop; a lunch plate runs $10-12.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">8</div>
+        <div class="name">Lettuce belt pull-off</div>
+        <span class="tag sight">SIGHT</span>
+        <div class="desc">Between Prunedale and Salinas the whole valley opens into industrial-scale ag. In August this feeds the country's salad bowls. Any exit east onto Espinosa Rd gives you a photo without leaving the car for more than five minutes.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">9</div>
+        <div class="name"><a href="https://steinbeck.org/" target="_blank" rel="noopener">National Steinbeck Center</a> · Salinas</div>
+        <span class="tag sight">SIGHT</span>
+        <div class="desc">The Rocinante camper from <em>Travels with Charley</em>. A whole gallery on the valley's agriculture. Old Town Salinas around it is walkable and unrestored in a good way.</div>
+        <div class="personal"><strong>FOR ERIC:</strong> foodie-adjacent — the ag gallery is the sleeper. Do this if you want context for everything you'll drive through next.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">10</div>
+        <div class="name"><a href="https://www.google.com/maps?q=La+Fogata+Salinas+CA" target="_blank" rel="noopener">La Fogata</a> · Salinas</div>
+        <span class="tag diner">DINER</span>
+        <span class="tag cheap">CHEAP</span>
+        <div class="desc">If you skipped diner breakfast in the East Bay, this is your lunch or late-brunch. Mexican-style diner: huevos rancheros, chilaquiles verdes, huevos a la mexicana, machacado con huevo (beef, non-pork), plates around $12-14. Enormous portions, red booths, no pretension.</div>
+        <div class="personal"><strong>FOR AARON:</strong> the American diner but Mexican — a genre in itself. Get a horchata.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ MAP 3: Salinas → King City ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 3</div>
+    <div class="segment-title">Salinas → King City<small>50 mi · US-101 · The long valley, condor country</small></div>
+  </div>
+
+  <div class="segment">
+    <div class="strip-map">
+      <svg viewBox="0 0 240 800" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="marker" x="-4%" y="-4%" width="108%" height="108%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+          </filter>
+        </defs>
+        <text x="10" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" font-weight="bold">SALINAS, CA</text>
+        <text x="150" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c">. . . . . . . . . .</text>
+        <text x="230" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" text-anchor="end" font-weight="bold">KING CITY, CA</text>
+        <line x1="8" y1="22" x2="232" y2="22" stroke="#c8352c" stroke-width="0.6"/>
+        <text x="232" y="36" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">3</text>
+
+        <!-- ===== BASE GEOGRAPHY ===== -->
+        <!-- Santa Lucia Range west (larger, with hatching) -->
+        <path d="M -5 30 Q 50 60 55 140 T 45 280 Q 55 400 45 550 T 55 730 L -5 780 L -5 30 Z"
+              fill="rgba(200,180,140,0.2)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.5">
+          <line x1="10" y1="80" x2="16" y2="98"/>
+          <line x1="18" y1="130" x2="24" y2="148"/>
+          <line x1="10" y1="180" x2="16" y2="198"/>
+          <line x1="18" y1="230" x2="24" y2="248"/>
+          <line x1="10" y1="290" x2="16" y2="308"/>
+          <line x1="18" y1="350" x2="24" y2="368"/>
+          <line x1="10" y1="420" x2="16" y2="438"/>
+          <line x1="18" y1="490" x2="24" y2="508"/>
+          <line x1="10" y1="560" x2="16" y2="578"/>
+          <line x1="18" y1="630" x2="24" y2="648"/>
+          <line x1="10" y1="700" x2="16" y2="718"/>
+        </g>
+        <text x="24" y="450" font-size="6" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" transform="rotate(-90 24 450)">Santa Lucia Range</text>
+
+        <!-- Gabilan Range east (with hatching, Pinnacles marker) -->
+        <path d="M 245 30 Q 200 60 195 140 T 200 280 Q 190 400 200 550 T 195 730 L 245 780 L 245 30 Z"
+              fill="rgba(200,180,140,0.2)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.5">
+          <line x1="205" y1="80" x2="212" y2="98"/>
+          <line x1="215" y1="130" x2="222" y2="148"/>
+          <line x1="205" y1="180" x2="212" y2="198"/>
+          <line x1="215" y1="230" x2="222" y2="248"/>
+          <line x1="205" y1="290" x2="212" y2="308"/>
+          <line x1="215" y1="360" x2="222" y2="378"/>
+          <line x1="205" y1="430" x2="212" y2="448"/>
+          <line x1="215" y1="500" x2="222" y2="518"/>
+          <line x1="205" y1="570" x2="212" y2="588"/>
+          <line x1="215" y1="640" x2="222" y2="658"/>
+        </g>
+        <text x="221" y="440" font-size="6" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" transform="rotate(-90 221 440)">Gabilan Range</text>
+        <!-- Pinnacles NP marker -->
+        <g transform="translate(215,360)">
+          <polygon points="0,-4 3,3 -3,3" fill="#6b5a3a" opacity="0.7"/>
+          <text x="-5" y="6" text-anchor="end" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a" font-weight="bold">Pinnacles NP</text>
+        </g>
+
+        <!-- Salinas River winding down valley (proper blue) -->
+        <path d="M 178 30 Q 168 100 178 180 Q 170 260 175 340 Q 168 420 178 500 Q 172 580 178 660 Q 170 720 165 780"
+              fill="none" stroke="#2a5b8a" stroke-width="1.5" opacity="0.55"/>
+        <text x="182" y="150" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Salinas R.</text>
+
+        <!-- Chalone Vineyards hint (east foothills near Soledad) -->
+        <g opacity="0.15" stroke="#6b7a3a" stroke-width="0.4">
+          <line x1="190" y1="345" x2="200" y2="345"/>
+          <line x1="190" y1="355" x2="200" y2="355"/>
+          <line x1="190" y1="365" x2="200" y2="365"/>
+        </g>
+        <text x="195" y="380" font-size="4" font-family="Bree Serif" fill="#6b7a3a" font-style="italic" text-anchor="middle">Chalone</text>
+
+        <!-- Vineyards / lettuce fields (west of highway) -->
+        <g opacity="0.15" stroke="#6b7a3a" stroke-width="0.4">
+          <line x1="60" y1="420" x2="105" y2="420"/>
+          <line x1="60" y1="435" x2="105" y2="435"/>
+          <line x1="60" y1="450" x2="105" y2="450"/>
+          <line x1="60" y1="465" x2="105" y2="465"/>
+        </g>
+
+        <!-- ===== SIDE ROADS ===== -->
+        <!-- SR-68 west from Salinas to Monterey -->
+        <path d="M 118 65 Q 80 80 40 90" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <g transform="translate(42,90)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">68</text>
+        </g>
+        <text x="54" y="104" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Monterey ←</text>
+
+        <!-- SR-146 east from Soledad to Pinnacles (west entrance) -->
+        <path d="M 118 335 Q 165 340 205 355" stroke="#26180b" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+        <g transform="translate(160,345)">
+          <rect x="-10" y="-5" width="20" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">146</text>
+        </g>
+
+        <!-- G-16 Arroyo Seco Rd east from Greenfield -->
+        <path d="M 125 480 Q 100 490 65 495" stroke="#8a7854" stroke-width="0.8" fill="none"/>
+        <text x="90" y="504" font-size="4" font-family="Special Elite" fill="#4a3728" text-anchor="middle">G-16 Arroyo Seco Rd</text>
+
+        <!-- G-13 (Chualar Canyon Rd) east -->
+        <path d="M 125 150 Q 155 155 190 158" stroke="#8a7854" stroke-width="0.7" fill="none" opacity="0.6"/>
+
+        <!-- G-15 Elm Ave east from Greenfield -->
+        <path d="M 118 490 Q 92 498 65 505" stroke="#8a7854" stroke-width="0.7" fill="none" opacity="0.6"/>
+
+        <!-- mileage -->
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold">
+          <text x="10" y="60">117</text>
+          <text x="10" y="220">130</text>
+          <text x="10" y="380">142</text>
+          <text x="10" y="540">155</text>
+          <text x="10" y="740">167</text>
+        </g>
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold" text-anchor="end">
+          <text x="232" y="60">50</text>
+          <text x="232" y="220">37</text>
+          <text x="232" y="380">25</text>
+          <text x="232" y="540">12</text>
+          <text x="232" y="740">0</text>
+        </g>
+
+        <!-- HAND-DRAWN YELLOW HIGHLIGHTER -->
+        <g filter="url(#marker)">
+          <path d="M 125 55 Q 115 130 128 220 T 118 330 Q 130 430 115 540 T 125 720"
+                fill="none" stroke="rgba(255,235,55,0.28)" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 125 55 Q 115 130 128 220 T 118 330 Q 130 430 115 540 T 125 720"
+                fill="none" stroke="rgba(252,220,40,0.38)" stroke-width="18" stroke-linecap="round"
+                transform="translate(1.5,-0.5)"/>
+          <path d="M 125 55 Q 115 130 128 220 T 118 330 Q 130 430 115 540 T 125 720"
+                fill="none" stroke="rgba(245,205,25,0.30)" stroke-width="14" stroke-linecap="round"
+                transform="translate(-1,1)"/>
+        </g>
+        <path d="M 125 55 Q 115 130 128 220 T 118 330 Q 130 430 115 540 T 125 720"
+              fill="none" stroke="#26180b" stroke-width="1.8"/>
+        <g filter="url(#marker)" opacity="0.80">
+          <path d="M 108 704 L 122 735 L 138 704 L 122 720 Z"
+                fill="rgba(250,215,30,0.60)" stroke="rgba(230,190,20,0.55)" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Pinnacles detour east (from Soledad ~y=330) -->
+        <path d="M 118 335 Q 165 340 210 340" stroke="#26180b" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+        <text x="150" y="332" font-size="6" font-family="Special Elite" fill="#26180b">→ <a href="https://www.nps.gov/pinn/" target="_blank" rel="noopener">Pinnacles NP</a></text>
+
+        <!-- Highway shields -->
+        <g transform="translate(140,165)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+        <g transform="translate(105,470)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+
+        <!-- Cities -->
+        <g font-family="Bree Serif" fill="#c8352c">
+          <circle cx="125" cy="55" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="125" y="45" text-anchor="middle" font-size="11" font-weight="bold">SALINAS</text>
+
+          <circle cx="122" cy="150" r="2" fill="#26180b"/>
+          <text x="145" y="153" font-size="8" fill="#26180b">Chualar</text>
+
+          <circle cx="127" cy="240" r="2" fill="#26180b"/>
+          <text x="150" y="243" font-size="8" fill="#26180b">Gonzales</text>
+
+          <circle cx="118" cy="335" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="88" y="338" text-anchor="end" font-size="8" font-weight="bold" fill="#26180b">Soledad</text>
+
+          <circle cx="125" cy="470" r="2" fill="#26180b"/>
+          <text x="148" y="473" font-size="8" fill="#26180b">Greenfield</text>
+
+          <circle cx="118" cy="720" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="118" y="740" text-anchor="middle" font-size="11" font-weight="bold">KING CITY</text>
+        </g>
+
+        <!-- POI badges -->
+        <g font-family="Alfa Slab One" font-size="9" fill="#f4ede1">
+          <rect x="65" y="60" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="70" text-anchor="middle">11</text>
+
+          <rect x="155" y="230" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="162" y="240" text-anchor="middle">12</text>
+
+          <rect x="63" y="325" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="70" y="335" text-anchor="middle">13</text>
+
+          <rect x="215" y="330" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="222" y="340" text-anchor="middle">14</text>
+
+          <rect x="155" y="460" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="162" y="470" text-anchor="middle">15</text>
+
+          <rect x="65" y="700" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="710" text-anchor="middle">16</text>
+        </g>
+
+        <!-- info box -->
+        <g>
+          <rect x="15" y="580" width="82" height="60" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <text x="19" y="591" font-size="6.5" font-family="Special Elite" fill="#26180b">US-101 south</text>
+          <text x="19" y="601" font-size="6" font-family="Special Elite" fill="#4a3728">. . . long, straight,</text>
+          <text x="19" y="609" font-size="6" font-family="Special Elite" fill="#4a3728">flat river valley.</text>
+          <text x="19" y="617" font-size="6" font-family="Special Elite" fill="#4a3728">Condors ride the</text>
+          <text x="19" y="625" font-size="6" font-family="Special Elite" fill="#4a3728">thermals overhead.</text>
+        </g>
+
+        <g transform="translate(200, 640)">
+          <circle cx="0" cy="0" r="14" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <polygon points="0,-10 3,0 0,10 -3,0" fill="#c8352c"/>
+          <text x="0" y="-16" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#26180b">N</text>
+        </g>
+
+        <text x="10" y="790" font-size="8" font-family="Bree Serif" fill="#c8352c">75-10</text>
+        <text x="230" y="790" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">3</text>
+      </svg>
+    </div>
+
+    <ul class="poi-list">
+      <li class="poi">
+        <div class="num">11</div>
+        <div class="name"><a href="https://steinbeckhouse.com/" target="_blank" rel="noopener">Steinbeck House</a> · Salinas (only if you skipped the Center)</div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag optional">OPTIONAL</span>
+        <span class="tag detour">DETOUR +5 min RT</span>
+        <div class="desc">The Victorian where Steinbeck was born, run as a lunch spot by a nonprofit. Redundant if you did stop #9.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">12</div>
+        <div class="name"><a href="https://www.google.com/maps?q=Villa+Isabel+Gonzales+CA" target="_blank" rel="noopener">Villa Isabel</a> · Gonzales</div>
+        <span class="tag cheap">CHEAP</span>
+        <span class="tag food">FOOD</span>
+        <div class="desc">Roadside Mexican in a town most people blow past. Carne asada plates $11, birria on weekends, huge horchatas. If you skipped <a href="https://www.google.com/maps?q=La+Fogata+Salinas+CA" target="_blank" rel="noopener">La Fogata</a> this is the equivalent, three exits south.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">13</div>
+        <div class="name"><a href="https://www.google.com/maps?q=Mission+Soledad+CA" target="_blank" rel="noopener">Mission Nuestra Señora de la Soledad</a></div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag detour">DETOUR +10 min RT</span>
+        <div class="desc">The 13th mission, quietest of them all. Two-room adobe chapel with a working bell. There is almost never anyone else there. Ten-minute wander, deeply peaceful.</div>
+        <div class="personal"><strong>FOR AARON:</strong> "Our Lady of Solitude" — the name is on-brand.</div>
+        <div class="personal"><strong>FOR KAREN:</strong> A working-bell adobe mission with native-plant gardens and almost no visitors. Ten minutes of quiet you didn't know you needed.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">14</div>
+        <div class="name"><a href="https://www.nps.gov/pinn/" target="_blank" rel="noopener">Pinnacles NP</a> (west entrance)</div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag optional">OPTIONAL</span>
+        <span class="tag detour">DETOUR +80 min RT</span>
+        <div class="desc">Balconies Cave trail (2-mi loop through a talus cave, bring headlamps) plus condor-watching. Real commitment: budget 3+ hours total between drive and hike. Almost certainly a "next trip" note.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">15</div>
+        <div class="name">Greenfield — "Broccoli Capital of the World"</div>
+        <span class="tag weird">WEIRD</span>
+        <div class="desc">Not a stop, a spectacle. Watch for the welcome sign. Photo op only.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">16</div>
+        <div class="name">King City — mid-drive breather</div>
+        <span class="tag stretch">STRETCH</span>
+        <div class="desc">Gas, coffee, walk around. You've hit roughly the halfway point. See MAP 4 for the diner recommendation (Wagon Wheel is right off the exit).</div>
+        <div class="eats"><strong>SUGGESTED PACE:</strong> aim to be at King City by 2 PM for a golden-hour arrival into Paso.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ MAP 4: King City → Paso Robles ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 4</div>
+    <div class="segment-title">King City → Paso Robles<small>60 mi · US-101 · Oil, mission, wine hills</small></div>
+  </div>
+
+  <div class="segment">
+    <div class="strip-map">
+      <svg viewBox="0 0 240 800" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="marker" x="-4%" y="-4%" width="108%" height="108%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+          </filter>
+        </defs>
+        <text x="10" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" font-weight="bold">KING CITY, CA</text>
+        <text x="150" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c">. . . . . . . . . .</text>
+        <text x="230" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" text-anchor="end" font-weight="bold">PASO ROBLES</text>
+        <line x1="8" y1="22" x2="232" y2="22" stroke="#c8352c" stroke-width="0.6"/>
+        <text x="232" y="36" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">4</text>
+
+        <!-- ===== BASE GEOGRAPHY ===== -->
+        <!-- Santa Lucia Range west (big mountains) -->
+        <path d="M -5 30 Q 55 55 60 130 T 50 260 Q 60 380 45 500 T 60 680 L -5 780 L -5 30 Z"
+              fill="rgba(200,180,140,0.22)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.5">
+          <line x1="10" y1="70" x2="16" y2="88"/>
+          <line x1="18" y1="120" x2="24" y2="138"/>
+          <line x1="10" y1="200" x2="16" y2="218"/>
+          <line x1="18" y1="280" x2="24" y2="298"/>
+          <line x1="10" y1="360" x2="16" y2="378"/>
+          <line x1="18" y1="440" x2="24" y2="458"/>
+          <line x1="10" y1="520" x2="16" y2="538"/>
+          <line x1="18" y1="600" x2="24" y2="618"/>
+          <line x1="10" y1="670" x2="16" y2="688"/>
+        </g>
+        <text x="26" y="420" font-size="6" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" transform="rotate(-90 26 420)">Santa Lucia Range</text>
+
+        <!-- Diablo/Cholame Hills east -->
+        <path d="M 245 30 Q 195 60 200 140 T 195 280 Q 205 400 195 540 T 200 730 L 245 780 L 245 30 Z"
+              fill="rgba(200,180,140,0.20)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.45">
+          <line x1="205" y1="80" x2="212" y2="98"/>
+          <line x1="215" y1="140" x2="222" y2="158"/>
+          <line x1="205" y1="200" x2="212" y2="218"/>
+          <line x1="215" y1="270" x2="222" y2="288"/>
+          <line x1="205" y1="340" x2="212" y2="358"/>
+          <line x1="215" y1="410" x2="222" y2="428"/>
+          <line x1="205" y1="480" x2="212" y2="498"/>
+          <line x1="215" y1="550" x2="222" y2="568"/>
+          <line x1="205" y1="620" x2="212" y2="638"/>
+        </g>
+
+        <!-- Salinas River (flows north, roughly parallel and east of highway) -->
+        <path d="M 165 780 Q 158 720 165 640 Q 155 560 168 480 Q 158 400 165 320 Q 158 240 168 160 Q 158 90 165 30"
+              fill="none" stroke="#2a5b8a" stroke-width="1.4" opacity="0.55"/>
+        <text x="170" y="550" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Salinas R.</text>
+
+        <!-- Lake San Antonio (west of route, mid-map) -->
+        <path d="M 22 340 Q 40 335 55 342 Q 65 350 60 365 Q 55 378 40 375 Q 25 372 20 358 Z"
+              fill="rgba(42,91,138,0.35)" stroke="rgba(42,91,138,0.55)" stroke-width="0.5"/>
+        <text x="40" y="360" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-weight="bold" text-anchor="middle">Lake San</text>
+        <text x="40" y="368" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-weight="bold" text-anchor="middle">Antonio</text>
+
+        <!-- Lake Nacimiento (further southwest) -->
+        <path d="M 15 470 Q 40 460 55 475 Q 65 485 55 500 Q 45 512 30 508 Q 12 505 10 490 Z"
+              fill="rgba(42,91,138,0.35)" stroke="rgba(42,91,138,0.55)" stroke-width="0.5"/>
+        <text x="35" y="488" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-weight="bold" text-anchor="middle">Lake</text>
+        <text x="35" y="496" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-weight="bold" text-anchor="middle">Nacimiento</text>
+
+        <!-- Fort Hunter Liggett west (military area) -->
+        <g opacity="0.25" stroke="#6b5a3a" stroke-width="0.4" fill="none">
+          <line x1="30" y1="200" x2="55" y2="215"/>
+          <line x1="35" y1="220" x2="60" y2="230"/>
+          <line x1="30" y1="245" x2="55" y2="255"/>
+        </g>
+        <text x="45" y="270" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" text-anchor="middle">Fort Hunter</text>
+        <text x="45" y="278" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" text-anchor="middle">Liggett</text>
+
+        <!-- Camp Roberts (military area east of route) -->
+        <g opacity="0.25" stroke="#6b5a3a" stroke-width="0.4" fill="none">
+          <line x1="180" y1="440" x2="205" y2="450"/>
+          <line x1="180" y1="460" x2="205" y2="470"/>
+          <line x1="180" y1="480" x2="205" y2="490"/>
+        </g>
+        <text x="192" y="500" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" text-anchor="middle">Camp Roberts</text>
+        <text x="192" y="508" font-size="4" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" text-anchor="middle">(military)</text>
+
+        <!-- Oil derricks (San Ardo oil field, more of them, east of route) -->
+        <g opacity="0.55" stroke="#4a3728" stroke-width="0.6" fill="none">
+          <path d="M 178 215 L 181 205 L 184 215 L 183 215 L 183 225"/>
+          <path d="M 188 235 L 191 225 L 194 235 L 193 235 L 193 245"/>
+          <path d="M 176 250 L 179 240 L 182 250 L 181 250 L 181 260"/>
+          <path d="M 195 260 L 198 250 L 201 260 L 200 260 L 200 270"/>
+          <path d="M 180 275 L 183 265 L 186 275 L 185 275 L 185 285"/>
+          <path d="M 190 290 L 193 280 L 196 290 L 195 290 L 195 300"/>
+          <path d="M 175 305 L 178 295 L 181 305 L 180 305 L 180 315"/>
+        </g>
+        <text x="192" y="330" font-size="5.5" font-family="Bree Serif" fill="#4a3728" font-style="italic" text-anchor="middle">San Ardo Oil</text>
+
+        <!-- Vineyards approaching Paso (bottom, both sides) -->
+        <g opacity="0.18" stroke="#6b7a3a" stroke-width="0.4">
+          <line x1="35" y1="620" x2="80" y2="620"/>
+          <line x1="35" y1="632" x2="80" y2="632"/>
+          <line x1="35" y1="644" x2="80" y2="644"/>
+          <line x1="160" y1="620" x2="205" y2="620"/>
+          <line x1="160" y1="632" x2="205" y2="632"/>
+          <line x1="160" y1="644" x2="205" y2="644"/>
+        </g>
+
+        <!-- ===== SIDE ROADS ===== -->
+        <!-- G-14 Jolon Rd west from King City to Fort Hunter Liggett -->
+        <path d="M 118 65 Q 85 130 60 190" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <text x="80" y="140" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle" transform="rotate(-55 80 140)">G-14 Jolon Rd</text>
+
+        <!-- G-18 Nacimiento Lake Dr west from Bradley -->
+        <path d="M 118 350 Q 88 400 55 470" stroke="#8a7854" stroke-width="0.9" fill="none"/>
+        <text x="90" y="410" font-size="4" font-family="Special Elite" fill="#4a3728" text-anchor="middle" transform="rotate(-50 90 410)">G-18</text>
+
+        <!-- G-19 Interlake Rd south from Nacimiento to Paso -->
+        <path d="M 40 500 Q 55 580 90 660" stroke="#8a7854" stroke-width="0.7" fill="none" opacity="0.6"/>
+
+        <!-- SR-46 east/west in Paso Robles -->
+        <path d="M 15 720 Q 60 715 118 718 Q 180 720 225 715" stroke="#8a7854" stroke-width="1.3" fill="none"/>
+        <g transform="translate(65,715)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">46</text>
+        </g>
+        <g transform="translate(190,715)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">46</text>
+        </g>
+        <text x="30" y="730" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="start">← Cambria</text>
+        <text x="220" y="730" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="end">to I-5 →</text>
+
+        <!-- mileage -->
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold">
+          <text x="10" y="60">167</text>
+          <text x="10" y="200">180</text>
+          <text x="10" y="340">195</text>
+          <text x="10" y="480">210</text>
+          <text x="10" y="620">220</text>
+          <text x="10" y="740">227</text>
+        </g>
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold" text-anchor="end">
+          <text x="232" y="60">60</text>
+          <text x="232" y="200">47</text>
+          <text x="232" y="340">32</text>
+          <text x="232" y="480">17</text>
+          <text x="232" y="620">7</text>
+          <text x="232" y="740">0</text>
+        </g>
+
+        <!-- HAND-DRAWN YELLOW HIGHLIGHTER -->
+        <g filter="url(#marker)">
+          <path d="M 122 55 Q 130 130 118 200 T 125 300 Q 118 380 130 450 T 118 550 Q 130 640 120 720"
+                fill="none" stroke="rgba(255,235,55,0.28)" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 122 55 Q 130 130 118 200 T 125 300 Q 118 380 130 450 T 118 550 Q 130 640 120 720"
+                fill="none" stroke="rgba(252,220,40,0.38)" stroke-width="18" stroke-linecap="round"
+                transform="translate(1.5,-0.5)"/>
+          <path d="M 122 55 Q 130 130 118 200 T 125 300 Q 118 380 130 450 T 118 550 Q 130 640 120 720"
+                fill="none" stroke="rgba(245,205,25,0.30)" stroke-width="14" stroke-linecap="round"
+                transform="translate(-1,1)"/>
+        </g>
+        <path d="M 122 55 Q 130 130 118 200 T 125 300 Q 118 380 130 450 T 118 550 Q 130 640 120 720"
+              fill="none" stroke="#26180b" stroke-width="1.8"/>
+        <g filter="url(#marker)" opacity="0.80">
+          <path d="M 106 704 L 120 735 L 134 704 L 120 720 Z"
+                fill="rgba(250,215,30,0.60)" stroke="rgba(230,190,20,0.55)" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Highway shields -->
+        <g transform="translate(140,130)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+        <g transform="translate(105,420)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+
+        <!-- Cities -->
+        <g font-family="Bree Serif" fill="#c8352c">
+          <circle cx="122" cy="55" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="122" y="45" text-anchor="middle" font-size="11" font-weight="bold">KING CITY</text>
+
+          <circle cx="127" cy="235" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="150" y="238" font-size="8" fill="#26180b" font-weight="bold">San Ardo</text>
+
+          <circle cx="120" cy="350" r="2" fill="#26180b"/>
+          <text x="145" y="353" font-size="8" fill="#26180b">Bradley</text>
+
+          <circle cx="128" cy="480" r="1.5" fill="#26180b"/>
+          <text x="150" y="483" font-size="7" fill="#4a3728">Camp Roberts</text>
+
+          <circle cx="120" cy="600" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="145" y="603" font-size="8" fill="#26180b" font-weight="bold">San Miguel</text>
+
+          <circle cx="120" cy="720" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="120" y="740" text-anchor="middle" font-size="11" font-weight="bold">PASO ROBLES</text>
+        </g>
+
+        <!-- POI badges -->
+        <g font-family="Alfa Slab One" font-size="9" fill="#f4ede1">
+          <rect x="145" y="60" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="152" y="70" text-anchor="middle">17</text>
+
+          <rect x="65" y="130" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="140" text-anchor="middle">18</text>
+
+          <rect x="65" y="225" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="235" text-anchor="middle">19</text>
+
+          <rect x="65" y="345" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="355" text-anchor="middle">20</text>
+
+          <rect x="65" y="590" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="600" text-anchor="middle">21</text>
+
+          <rect x="150" y="710" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="157" y="720" text-anchor="middle">22</text>
+        </g>
+
+        <!-- info box -->
+        <g>
+          <rect x="145" y="640" width="82" height="52" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <text x="149" y="651" font-size="6.5" font-family="Special Elite" fill="#26180b">Wine country</text>
+          <text x="149" y="661" font-size="6" font-family="Special Elite" fill="#4a3728">approaches. Vine</text>
+          <text x="149" y="669" font-size="6" font-family="Special Elite" fill="#4a3728">rows begin after</text>
+          <text x="149" y="677" font-size="6" font-family="Special Elite" fill="#4a3728">San Miguel. AVA:</text>
+          <text x="149" y="685" font-size="6" font-family="Special Elite" fill="#4a3728">Paso Robles.</text>
+        </g>
+
+        <g transform="translate(200, 130)">
+          <circle cx="0" cy="0" r="14" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <polygon points="0,-10 3,0 0,10 -3,0" fill="#c8352c"/>
+          <text x="0" y="-16" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#26180b">N</text>
+        </g>
+
+        <text x="10" y="790" font-size="8" font-family="Bree Serif" fill="#c8352c">75-10</text>
+        <text x="230" y="790" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">4</text>
+      </svg>
+    </div>
+
+    <ul class="poi-list">
+      <li class="poi">
+        <div class="num">17</div>
+        <div class="name"><a href="https://www.google.com/maps?q=Wagon+Wheel+Restaurant+King+City+CA" target="_blank" rel="noopener">Wagon Wheel Restaurant</a> · King City</div>
+        <span class="tag diner">DINER</span>
+        <span class="tag cheap">CHEAP</span>
+        <div class="desc">Actual roadside diner right off the exit. Been feeding truckers, farmers, and Basque sheepherders since forever. Sourdough French toast, corned beef hash, chicken-fried steak, chicken sausage on request. Fluorescent-lit, red booths, coffee refills endless. Absolute classic.</div>
+        <div class="personal"><strong>FOR AARON:</strong> this is the Platonic ideal of an American highway diner. Ask for the sourdough toast, get a milkshake.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">18</div>
+        <div class="name"><a href="https://www.google.com/maps?q=Tacos+Los+Rubens+King+City+CA" target="_blank" rel="noopener">Tacos Los Ruben's</a> / El Camino Real · King City</div>
+        <span class="tag cheap">CHEAP</span>
+        <span class="tag food">FOOD</span>
+        <span class="tag optional">OPTIONAL</span>
+        <div class="desc">If diner isn't the mood: cheap tacos, huge burritos, tortas al pastor. $3-4 street tacos. King City has a serious taquería scene most people miss.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">19</div>
+        <div class="name">San Ardo oil fields</div>
+        <span class="tag weird">WEIRD</span>
+        <span class="tag sight">SIGHT</span>
+        <div class="desc">Hundreds of nodding-donkey pumps stretch across brown hills — one of California's biggest onshore oil fields, hiding in plain sight. Roll down the windows. Weirdly beautiful at sunset.</div>
+        <div class="personal"><strong>FOR AARON:</strong> British postwar-industrial vibe transplanted to California pastoral. Slow down and look; this landscape is why so much of the state's mythology exists.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">20</div>
+        <div class="name">Bradley — the wagon-wheel era</div>
+        <span class="tag weird">WEIRD</span>
+        <span class="tag optional">OPTIONAL</span>
+        <div class="desc">Population maybe 90. The old Wells Fargo station and adobes. Not really a stop, more of a "look what still exists" as you pass.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">21</div>
+        <div class="name"><a href="https://missionsanmiguel.org/" target="_blank" rel="noopener">Mission San Miguel Arcángel</a></div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag detour">DETOUR +5 min RT</span>
+        <div class="desc">1797. Genuinely one of the least altered California missions — the original interior frescoes (painted by Salinan Indians under Estevan Munras) are still there, in the original faded colors. Ten-minute wander. Weekday afternoons are empty.</div>
+        <div class="personal"><strong>FOR ERIC & AARON:</strong> the least Instagrammed piece of California mission art. You'll have it to yourselves.</div>
+        <div class="personal"><strong>FOR KAREN:</strong> The 1797 chapel is smaller and stiller than any museum. Sit in a pew for five minutes. The frescoes are folk-art beautiful.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">22</div>
+        <div class="name">Paso Robles — arrival</div>
+        <span class="tag food">FOOD</span>
+        <div class="desc">You've made it. Check in at the <a href="https://pasoroblesinn.com/" target="_blank" rel="noopener">Paso Robles Inn</a> (right on the downtown square) and see MAP 5 for the evening.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ MAP 5: PASO ROBLES CITY ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 5</div>
+    <div class="segment-title">Paso Robles · Evening<small>Downtown square + tasting rooms · walk it</small></div>
+  </div>
+
+  <div class="city-hero">
+    <div>
+      <div class="name">PASO ROBLES</div>
+      <div style="font-family:'Special Elite',monospace; font-size:12px; letter-spacing:2px; color:var(--ink-soft);">POP. 32,000 · WINE COUNTRY · EST. 1889</div>
+    </div>
+    <div class="meta">
+      NIGHT 1 · TUE AUG 18<br/>
+      LODGING · <a href="https://pasoroblesinn.com/" target="_blank" rel="noopener">PASO ROBLES INN</a><br/>
+      1103 SPRING ST · (800) 676-1713
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="col-title">The Plan</div>
+      <p style="font-size:14px; line-height:1.7;">
+        Check in, drop bags. The Inn sits on the downtown square — everything below is a walk.
+        Golden hour tasting flight → dinner → early wander → soak in the hotel spring-fed tub if your room has one
+        (call ahead to confirm which specific rooms still do; the recent renovation moved this around).
+      </p>
+
+      <div class="note">
+        <strong><a href="https://franklinhotsprings.com/" target="_blank" rel="noopener">Franklin Hot Springs</a> option:</strong> 3015 Creston Rd, 10 min from downtown, open until 9pm.
+        Low-key natural soaking pond. $20-ish, families with pool noodles, no towels or robes.
+        <strong>Aaron will love it precisely because it is unglamorous.</strong>
+        <strong style="color:var(--stamp-red);">Karen: this is exactly the kind of place moms don't get to go to.</strong>
+        No wardrobe, no judgment, no one asking you a question. Loosen up.
+        <span style="color:var(--stamp-red); font-weight:bold;">DETOUR +20 min RT.</span>
+      </div>
+
+      <div class="col-title" style="margin-top: 24px;">Wed Morning Breakfast</div>
+      <p style="font-size:13px; line-height:1.6;">
+        <strong><a href="https://www.google.com/maps?q=The+Backyard+on+Thirteenth+Paso+Robles+CA" target="_blank" rel="noopener">The Backyard on Thirteenth</a></strong> — savory brunch, chicken sausage, huge portions. <strong><a href="https://kitchenettetempleton.com/" target="_blank" rel="noopener">Kitchenette</a> (Templeton, 10 min)</strong> — tiny farm-to-table brunch, worth the drive. <strong><a href="https://www.google.com/maps?q=Odyssey+World+Cafe+Paso+Robles+CA" target="_blank" rel="noopener">Odyssey World Café</a></strong> — solid downtown coffee + eggs.
+      </p>
+    </div>
+
+    <div>
+      <div class="col-title">Downtown Walking Loop</div>
+      <ul class="poi-list">
+        <li class="poi">
+          <div class="num">A</div>
+          <div class="name">City Park Square</div>
+          <span class="tag sight">SIGHT</span>
+          <div class="desc">Start here. Big oaks, gazebo, live music some evenings. Everything else is within 3 blocks.</div>
+          <div class="personal"><strong>FOR KAREN:</strong> Wander the historic downtown before dinner — the square, the old bank buildings, a couple of small shops with textiles and pottery. Do it alone if you want; give yourself permission to.</div>
+        </li>
+        <li class="poi">
+          <div class="num">B</div>
+          <div class="name">Tasting rooms — do 2, not 5</div>
+          <span class="tag food">FOOD</span>
+          <div class="desc">Well-poured picks on the square: <strong><a href="https://www.google.com/maps?q=Bodegas+Paso+Robles+CA" target="_blank" rel="noopener">Bodegas Paso Robles</a></strong> (Spanish varietals), <strong><a href="https://www.google.com/maps?q=The+Wine+Attic+Paso+Robles+CA" target="_blank" rel="noopener">The Wine Attic</a></strong> (curated multi-producer), <strong><a href="https://www.altacolina.com/" target="_blank" rel="noopener">Alta Colina</a></strong> (Rhône focus). Order by the glass, not the flight, so you actually taste them.</div>
+        </li>
+        <li class="poi">
+          <div class="num">C</div>
+          <div class="name"><a href="https://fishgaucho.com/" target="_blank" rel="noopener">Fish Gaucho</a> or <a href="https://lespetitescanailles.com/" target="_blank" rel="noopener">Les Petites Canailles</a> (dinner)</div>
+          <span class="tag food">FOOD</span>
+          <div class="desc"><strong><a href="https://fishgaucho.com/" target="_blank" rel="noopener">Fish Gaucho</a></strong> = modern Mexican, patio, tequila-forward. <strong><a href="https://lespetitescanailles.com/" target="_blank" rel="noopener">Les Petites Canailles</a></strong> = French, small, chef-driven. Reserve either.</div>
+          <div class="personal"><strong>FOR ERIC:</strong> Petites Canailles is the sleeper — a real bistro in an unlikely wine town. Ask what the chef is doing off-menu.</div>
+        </li>
+        <li class="poi">
+          <div class="num">D</div>
+          <div class="name"><a href="https://villacreek.com/" target="_blank" rel="noopener">Villa Creek Cellars</a> (cheap-and-good)</div>
+          <span class="tag cheap">CHEAP</span>
+          <span class="tag food">FOOD</span>
+          <div class="desc">If Petites Canailles books out or you want casual: Villa Creek does wood-fired burgers and $15 plates with their own natural wine list. Slouch-friendly.</div>
+        </li>
+        <li class="poi">
+          <div class="num">E</div>
+          <div class="name"><a href="https://www.firestonebeer.com/" target="_blank" rel="noopener">Firestone Walker Taproom</a></div>
+          <span class="tag optional">OPTIONAL</span>
+          <div class="desc">Nightcap: one of California's most decorated breweries. Their Paso taproom is the mothership.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="logistics">
+    <h3>MORNING OF WED AUG 19</h3>
+    <div class="row"><span>BREAKFAST</span><span><a href="https://www.google.com/maps?q=The+Backyard+on+Thirteenth+Paso+Robles+CA" target="_blank" rel="noopener">The Backyard on Thirteenth</a> (savory diner-ish) or <a href="https://kitchenettetempleton.com/" target="_blank" rel="noopener">Kitchenette</a> Templeton (brunch)</span></div>
+    <div class="row"><span>OPTIONAL AM</span><span>One wine drive: 46 West to <a href="https://daouvineyards.com/" target="_blank" rel="noopener">Daou</a> or <a href="https://justinwine.com/" target="_blank" rel="noopener">Justin</a> (both spectacular views, book ahead)</span></div>
+    <div class="row"><span>DEPART BY</span><span>1:00 PM for a leisurely Sycamore arrival</span></div>
+  </div>
+</div>
+
+<!-- ============================ MAP 6: PASO ROBLES → AVILA BEACH ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 6</div>
+    <div class="segment-title">Paso Robles → Avila Beach<small>40 mi · US-101 South · One dramatic pass</small></div>
+  </div>
+
+  <div class="segment">
+    <div class="strip-map">
+      <svg viewBox="0 0 240 800" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="marker" x="-4%" y="-4%" width="108%" height="108%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+          </filter>
+        </defs>
+        <text x="10" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" font-weight="bold">PASO ROBLES</text>
+        <text x="150" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c">. . . . . . . . . .</text>
+        <text x="230" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" text-anchor="end" font-weight="bold">AVILA BEACH</text>
+        <line x1="8" y1="22" x2="232" y2="22" stroke="#c8352c" stroke-width="0.6"/>
+        <text x="232" y="36" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">6</text>
+
+        <!-- ===== BASE GEOGRAPHY ===== -->
+        <!-- Santa Lucia Coastal Range west (bigger, hatched) -->
+        <path d="M -5 30 Q 45 60 55 130 T 45 260 Q 55 350 40 450 T 55 620 L 45 700 L -5 730 L -5 30 Z"
+              fill="rgba(200,180,140,0.22)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.5">
+          <line x1="10" y1="70" x2="16" y2="88"/>
+          <line x1="18" y1="120" x2="24" y2="138"/>
+          <line x1="10" y1="180" x2="16" y2="198"/>
+          <line x1="18" y1="240" x2="24" y2="258"/>
+          <line x1="10" y1="310" x2="16" y2="328"/>
+          <line x1="18" y1="380" x2="24" y2="398"/>
+          <line x1="10" y1="450" x2="16" y2="468"/>
+          <line x1="18" y1="520" x2="24" y2="538"/>
+          <line x1="10" y1="580" x2="16" y2="598"/>
+        </g>
+        <text x="26" y="360" font-size="6" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" transform="rotate(-90 26 360)">Santa Lucia Coast Range</text>
+
+        <!-- Interior hills east -->
+        <path d="M 245 30 Q 195 60 200 130 T 195 260 Q 205 360 195 480 T 200 640 L 245 700 L 245 30 Z"
+              fill="rgba(200,180,140,0.18)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.45">
+          <line x1="205" y1="80" x2="212" y2="98"/>
+          <line x1="215" y1="150" x2="222" y2="168"/>
+          <line x1="205" y1="220" x2="212" y2="238"/>
+          <line x1="215" y1="290" x2="222" y2="308"/>
+          <line x1="205" y1="360" x2="212" y2="378"/>
+          <line x1="215" y1="430" x2="222" y2="448"/>
+          <line x1="205" y1="500" x2="212" y2="518"/>
+          <line x1="215" y1="570" x2="222" y2="588"/>
+        </g>
+
+        <!-- Santa Margarita Lake (east of Sta Margarita) -->
+        <path d="M 195 320 Q 215 315 225 328 Q 232 340 225 355 Q 215 365 200 358 Q 190 348 195 335 Z"
+              fill="rgba(42,91,138,0.35)" stroke="rgba(42,91,138,0.55)" stroke-width="0.5"/>
+        <text x="210" y="342" font-size="4.5" font-family="Bree Serif" fill="#2a5b8a" font-weight="bold" text-anchor="middle">Sta Margarita</text>
+        <text x="210" y="350" font-size="4.5" font-family="Bree Serif" fill="#2a5b8a" font-weight="bold" text-anchor="middle">Lake</text>
+
+        <!-- Salinas River headwaters (fades north) -->
+        <path d="M 165 30 Q 158 130 168 230 Q 158 320 165 400" fill="none" stroke="#2a5b8a" stroke-width="1.2" opacity="0.4"/>
+        <text x="170" y="150" font-size="5" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Salinas R.</text>
+
+        <!-- Salinas River-turns west at Cuesta Grade -->
+
+        <!-- Vineyards near Paso (top) -->
+        <g opacity="0.15" stroke="#6b7a3a" stroke-width="0.4">
+          <line x1="50" y1="90" x2="90" y2="90"/>
+          <line x1="50" y1="102" x2="90" y2="102"/>
+          <line x1="50" y1="114" x2="90" y2="114"/>
+          <line x1="160" y1="110" x2="200" y2="110"/>
+          <line x1="160" y1="122" x2="200" y2="122"/>
+          <line x1="160" y1="134" x2="200" y2="134"/>
+        </g>
+
+        <!-- Edna Valley wine hills (SW of SLO) -->
+        <g opacity="0.15" stroke="#6b7a3a" stroke-width="0.4">
+          <line x1="45" y1="595" x2="85" y2="595"/>
+          <line x1="45" y1="607" x2="85" y2="607"/>
+          <line x1="45" y1="619" x2="85" y2="619"/>
+        </g>
+        <text x="65" y="632" font-size="4" font-family="Bree Serif" fill="#6b7a3a" font-style="italic" text-anchor="middle">Edna Valley</text>
+
+        <!-- Cuesta Grade — bold marker with elevation -->
+        <path d="M 105 420 Q 118 440 128 460 Q 135 478 115 495" stroke="#c8352c" stroke-width="2.2" fill="none" opacity="0.55"/>
+        <text x="150" y="452" font-size="7" font-family="Alfa Slab One" fill="#c8352c">CUESTA</text>
+        <text x="150" y="461" font-size="7" font-family="Alfa Slab One" fill="#c8352c">GRADE</text>
+        <text x="150" y="472" font-size="5" font-family="Special Elite" fill="#4a3728">elev 1522 ft</text>
+
+        <!-- San Luis Bay (bottom-left coast) -->
+        <path d="M -5 660 Q 50 665 90 685 Q 60 720 40 780 L -5 780 Z"
+              fill="rgba(42,91,138,0.22)" stroke="rgba(42,91,138,0.4)" stroke-width="0.5"/>
+        <text x="30" y="710" font-size="6" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">San Luis</text>
+        <text x="30" y="720" font-size="6" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Bay</text>
+        <text x="15" y="760" font-size="6" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Pacific</text>
+
+        <!-- Point San Luis peninsula -->
+        <circle cx="45" cy="695" r="1.5" fill="#c8621b" stroke="#26180b" stroke-width="0.4"/>
+        <text x="30" y="695" font-size="4" font-family="Bree Serif" fill="#4a3728" text-anchor="end">Pt San Luis</text>
+
+        <!-- ===== SIDE ROADS ===== -->
+        <!-- SR-46 west from Paso (top) -->
+        <path d="M 118 65 Q 85 72 45 78" stroke="#8a7854" stroke-width="1.1" fill="none"/>
+        <g transform="translate(60,72)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">46</text>
+        </g>
+        <text x="35" y="90" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Cambria ←</text>
+
+        <!-- SR-46 east from Paso (top-right) -->
+        <path d="M 118 60 Q 155 65 195 70" stroke="#8a7854" stroke-width="1.1" fill="none"/>
+        <g transform="translate(175,68)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">46</text>
+        </g>
+        <text x="200" y="82" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">to I-5 →</text>
+
+        <!-- SR-58 east from Santa Margarita -->
+        <path d="M 122 350 Q 155 355 190 340" stroke="#8a7854" stroke-width="0.9" fill="none"/>
+        <g transform="translate(165,346)">
+          <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">58</text>
+        </g>
+
+        <!-- SR-1 PCH west from SLO -->
+        <path d="M 118 585 Q 80 595 42 605" stroke="#8a7854" stroke-width="1.3" fill="none"/>
+        <g transform="translate(60,600)">
+          <rect x="-8" y="-5" width="16" height="11" fill="#c8352c" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">1</text>
+        </g>
+        <text x="42" y="618" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Morro Bay →</text>
+
+        <!-- SR-227 south from SLO through Edna Valley -->
+        <path d="M 125 590 Q 100 620 88 665" stroke="#8a7854" stroke-width="0.9" fill="none"/>
+        <g transform="translate(102,635)">
+          <rect x="-10" y="-5" width="20" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">227</text>
+        </g>
+
+        <!-- mileage -->
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold">
+          <text x="10" y="60">0</text>
+          <text x="10" y="200">10</text>
+          <text x="10" y="380">20</text>
+          <text x="10" y="560">32</text>
+          <text x="10" y="740">40</text>
+        </g>
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold" text-anchor="end">
+          <text x="232" y="60">40</text>
+          <text x="232" y="200">30</text>
+          <text x="232" y="380">20</text>
+          <text x="232" y="560">8</text>
+          <text x="232" y="740">0</text>
+        </g>
+
+        <!-- HAND-DRAWN YELLOW HIGHLIGHTER -->
+        <g filter="url(#marker)">
+          <path d="M 120 55 Q 130 130 118 200 T 125 340 Q 108 420 130 500 T 118 620 Q 100 690 90 720"
+                fill="none" stroke="rgba(255,235,55,0.28)" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 120 55 Q 130 130 118 200 T 125 340 Q 108 420 130 500 T 118 620 Q 100 690 90 720"
+                fill="none" stroke="rgba(252,220,40,0.38)" stroke-width="18" stroke-linecap="round"
+                transform="translate(1.5,-0.5)"/>
+          <path d="M 120 55 Q 130 130 118 200 T 125 340 Q 108 420 130 500 T 118 620 Q 100 690 90 720"
+                fill="none" stroke="rgba(245,205,25,0.30)" stroke-width="14" stroke-linecap="round"
+                transform="translate(-1,1)"/>
+        </g>
+        <path d="M 120 55 Q 130 130 118 200 T 125 340 Q 108 420 130 500 T 118 620 Q 100 690 90 720"
+              fill="none" stroke="#26180b" stroke-width="1.8"/>
+        <g filter="url(#marker)" opacity="0.80">
+          <path d="M 68 704 L 82 735 L 96 704 L 82 720 Z"
+                fill="rgba(250,215,30,0.60)" stroke="rgba(230,190,20,0.55)" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Avila Beach Dr split -->
+        <path d="M 118 620 Q 100 640 80 700" stroke="#26180b" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+
+        <!-- Highway shields -->
+        <g transform="translate(140,150)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+        <g transform="translate(100,570)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+
+        <!-- Cities -->
+        <g font-family="Bree Serif" fill="#c8352c">
+          <circle cx="120" cy="55" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="120" y="45" text-anchor="middle" font-size="11" font-weight="bold">PASO ROBLES</text>
+
+          <circle cx="122" cy="150" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="145" y="153" font-size="8" fill="#26180b" font-weight="bold">Templeton</text>
+
+          <circle cx="125" cy="255" r="2" fill="#26180b"/>
+          <text x="145" y="258" font-size="8" fill="#26180b">Atascadero</text>
+
+          <circle cx="120" cy="345" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="145" y="348" font-size="8" fill="#26180b" font-weight="bold">Sta Margarita</text>
+
+          <circle cx="122" cy="570" r="3" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="150" y="573" font-size="9" fill="#c8352c" font-weight="bold">San Luis</text>
+          <text x="150" y="583" font-size="9" fill="#c8352c" font-weight="bold">Obispo</text>
+
+          <circle cx="80" cy="720" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="80" y="750" text-anchor="middle" font-size="11" font-weight="bold">AVILA BEACH</text>
+        </g>
+
+        <!-- POI badges -->
+        <g font-family="Alfa Slab One" font-size="9" fill="#f4ede1">
+          <rect x="65" y="140" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="150" text-anchor="middle">23</text>
+
+          <rect x="65" y="335" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="345" text-anchor="middle">24</text>
+
+          <rect x="145" y="450" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="152" y="460" text-anchor="middle">25</text>
+
+          <rect x="65" y="560" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="570" text-anchor="middle">26</text>
+
+          <rect x="145" y="680" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="152" y="690" text-anchor="middle">27</text>
+        </g>
+
+        <!-- info box -->
+        <g>
+          <rect x="145" y="200" width="82" height="52" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <text x="149" y="211" font-size="6.5" font-family="Special Elite" fill="#26180b">US-101 South</text>
+          <text x="149" y="221" font-size="6" font-family="Special Elite" fill="#4a3728">. . . climbs 1,500 ft</text>
+          <text x="149" y="229" font-size="6" font-family="Special Elite" fill="#4a3728">at Cuesta Grade,</text>
+          <text x="149" y="237" font-size="6" font-family="Special Elite" fill="#4a3728">pours you into the</text>
+          <text x="149" y="245" font-size="6" font-family="Special Elite" fill="#4a3728">coastal basin.</text>
+        </g>
+
+        <g transform="translate(35, 660)">
+          <circle cx="0" cy="0" r="14" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <polygon points="0,-10 3,0 0,10 -3,0" fill="#c8352c"/>
+          <text x="0" y="-16" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#26180b">N</text>
+        </g>
+
+        <text x="10" y="790" font-size="8" font-family="Bree Serif" fill="#c8352c">75-10</text>
+        <text x="230" y="790" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">6</text>
+      </svg>
+    </div>
+
+    <ul class="poi-list">
+      <li class="poi">
+        <div class="num">23</div>
+        <div class="name">Templeton — <a href="https://www.google.com/maps?q=15+Degrees+C+Wine+Bar+Templeton+CA" target="_blank" rel="noopener">15 Degrees C</a> wine bar OR <a href="https://kitchenettetempleton.com/" target="_blank" rel="noopener">Kitchenette</a></div>
+        <span class="tag food">FOOD</span>
+        <span class="tag detour">DETOUR +15 min RT</span>
+        <div class="desc">Tiny town, big soul. <strong>15° C</strong> for a curated by-the-glass list. <strong><a href="https://kitchenettetempleton.com/" target="_blank" rel="noopener">Kitchenette</a></strong> for a proper farm-to-table lunch — sandwich menu is spectacular and cheap ($15-18). Karen or Aaron will want to bring a bottle home.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">24</div>
+        <div class="name"><a href="https://ancientpeaks.com/" target="_blank" rel="noopener">Ancient Peaks Winery</a> · Santa Margarita</div>
+        <span class="tag food">FOOD</span>
+        <span class="tag optional">OPTIONAL</span>
+        <span class="tag detour">DETOUR +10 min RT</span>
+        <div class="desc">Southernmost Paso appellation, on a working cattle ranch. Tasting room is in the old feed store. Zip-line tours if anyone wants to burn energy.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">25</div>
+        <div class="name">Cuesta Grade vista</div>
+        <span class="tag sight">SIGHT</span>
+        <div class="desc">The 101 climbs 1,500 feet in six miles and pours you out over the Los Osos Valley toward the coast. Pull-off at the summit — worth two minutes. First glimpse of the Pacific ahead.</div>
+        <div class="personal"><strong>FOR ERIC:</strong> this is the moment the drive becomes coastal. Temperature drops five degrees in three miles. Air smells like eucalyptus.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">26</div>
+        <div class="name">San Luis Obispo — 60-90 min stop</div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag food">FOOD</span>
+        <span class="tag detour">DETOUR +25 min RT</span>
+        <div class="desc">Park at the free Palm St lot. Walk: <a href="https://missionsanluisobispo.org/" target="_blank" rel="noopener">Mission San Luis Obispo</a> → <strong><a href="https://www.google.com/maps?q=Bubblegum+Alley+San+Luis+Obispo" target="_blank" rel="noopener">Bubblegum Alley</a></strong> (whole alley wall coated in chewed gum since 1970 — Aaron needs to see this) → lunch.</div>
+        <div class="eats"><strong>EAT CHEAP:</strong> <strong><a href="https://www.google.com/maps?q=Louisas+Place+San+Luis+Obispo+CA" target="_blank" rel="noopener">Louisa's Place</a></strong> — legit diner, $10 breakfast plates all day, chicken sausage available. <strong><a href="https://highstreetdeli.com/" target="_blank" rel="noopener">High Street Deli</a></strong> — massive sandwiches, $12. <strong><a href="https://firestonegrill.com/" target="_blank" rel="noopener">Firestone Grill</a></strong> — tri-tip sandwich institution, $12, no frills, life-changing. Skip fancy places here; save that for <a href="https://www.emberwoodfire.com/" target="_blank" rel="noopener">Ember</a> tomorrow.</div>
+        <div class="personal"><strong>FOR AARON:</strong> <a href="https://www.google.com/maps?q=Bubblegum+Alley+San+Luis+Obispo" target="_blank" rel="noopener">Bubblegum Alley</a> is a professional-level piece of collective compulsive behavior. As a psychotherapist you'll have thoughts.</div>
+        <div class="personal"><strong>FOR ERIC:</strong> UCSC vs. Cal Poly SLO — two "college town California" archetypes. Compare & contrast.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">27</div>
+        <div class="name"><a href="https://www.avilavalleybarn.com/" target="_blank" rel="noopener">Avila Barn</a> (Avila Beach Dr)</div>
+        <span class="tag food">FOOD</span>
+        <span class="tag weird">WEIRD</span>
+        <span class="tag cheap">CHEAP</span>
+        <div class="desc">Right before Avila. Roadside farm store, huge homemade smoothie ($9), pumpkin-carved kiddie stuff even in August, produce, weird jams. Grab a bag of stone fruit for the Sycamore room.</div>
+        <div class="personal"><strong>FOR KAREN:</strong> Nursery plus farm store plus a jam wall plus handmade crafts. Perfect stop to pick up a plant or something small — for someone back home, or (better) for yourself.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================ MAP 7: AVILA BEACH / SYCAMORE ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 7</div>
+    <div class="segment-title">Avila Beach · Wed PM & Thu AM<small><a href="https://sycamoresprings.com/" target="_blank" rel="noopener">Sycamore Mineral Springs</a> · your own tub · long soak</small></div>
+  </div>
+
+  <div class="city-hero">
+    <div>
+      <div class="name">AVILA BEACH</div>
+      <div style="font-family:'Special Elite',monospace; font-size:12px; letter-spacing:2px; color:var(--ink-soft);">POP. 1,600 · SUNNY MICROCLIMATE · SLO'S SECRET COAST</div>
+    </div>
+    <div class="meta">
+      NIGHT 2 · WED AUG 19<br/>
+      LODGING · <a href="https://sycamoresprings.com/" target="_blank" rel="noopener">SYCAMORE MINERAL SPRINGS</a><br/>
+      1215 AVILA BEACH DR
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="col-title">The Point of Being Here</div>
+      <p style="font-size:14px; line-height:1.7;">
+        Your room has a private mineral spring hot tub on its own deck. This is the whole assignment.
+        Wed afternoon → Thu around noon. Required activity count: zero.
+      </p>
+      <p style="font-size:14px; line-height:1.7;">
+        Correct itinerary: soak on arrival. Dinner. Soak before bed. Sleep. Coffee on the deck.
+        One more soak. Drive fifteen minutes to Pismo. Feel like a different person.
+      </p>
+
+      <div class="note">
+        <strong>Thursday hillside tub bonus (guests only):</strong> 50% off the hillside private tubs
+        (24 tubs tucked into oak woods above property) between 8am-3pm weekdays. Book a 30-min slot
+        online the night before. Different vibe from your room tub — up under the trees, feels like a secret.
+      </div>
+
+      <div class="col-title" style="margin-top: 24px;">Thu Breakfast</div>
+      <p style="font-size:13px; line-height:1.6;">
+        <strong><a href="https://sycamoresprings.com/dining/" target="_blank" rel="noopener">Gardens of Avila</a></strong> (on-site) is easy — decent coffee, deck seating, no wardrobe change required.
+        Or drive 5 min into Avila for <strong><a href="https://www.google.com/maps?q=Kraken+Coffee+Avila+Beach+CA" target="_blank" rel="noopener">Kraken Coffee</a></strong> (espresso + pastries) if you want to walk the boardwalk after.
+      </p>
+    </div>
+
+    <div>
+      <div class="col-title">If You Actually Want to Leave the Room</div>
+      <ul class="poi-list">
+        <li class="poi">
+          <div class="num">F</div>
+          <div class="name">Avila Beach boardwalk + pier</div>
+          <span class="tag sight">SIGHT</span>
+          <div class="desc">Ten minutes from Sycamore. Short walkable boardwalk. <strong><a href="https://www.google.com/maps?q=Custom+House+Oyster+Bar+Avila+Beach+CA" target="_blank" rel="noopener">Custom House Oyster Bar</a></strong> right on the beach — happy hour oysters $2 apiece. Sunset here is very good.</div>
+          <div class="personal"><strong>FOR KAREN:</strong> Oysters at happy hour on the sand, sunset over the bay, feet in it. This is the "loosen up" moment of the whole trip. Take the shell home.</div>
+        </li>
+        <li class="poi">
+          <div class="num">G</div>
+          <div class="name">Dinner: <a href="https://www.emberwoodfire.com/" target="_blank" rel="noopener">Ember</a> (Arroyo Grande, 15 min)</div>
+          <span class="tag food">FOOD</span>
+          <div class="desc">Wood-fired everything, chef Brian Collins (ex-Chez Panisse). Books out — call the moment you decide. Alternative on-property: <strong><a href="https://sycamoresprings.com/dining/" target="_blank" rel="noopener">Gardens of Avila</a></strong> at Sycamore (excellent, easy, walkable to your room).</div>
+          <div class="personal"><strong>FOR ERIC:</strong> <a href="https://www.emberwoodfire.com/" target="_blank" rel="noopener">Ember</a> is the food destination on the whole itinerary. If you can only pull off one great meal, do this one.</div>
+        </li>
+        <li class="poi">
+          <div class="num">H</div>
+          <div class="name">Pismo taquerias (10 min drive, cheap alt)</div>
+          <span class="tag cheap">CHEAP</span>
+          <span class="tag food">FOOD</span>
+          <div class="desc">If <a href="https://www.emberwoodfire.com/" target="_blank" rel="noopener">Ember</a> is booked and Gardens feels too proper: <strong><a href="https://www.google.com/maps?q=El+Rancho+Restaurant+Grover+Beach+CA" target="_blank" rel="noopener">El Rancho Restaurant</a></strong> in Grover Beach for $10 combo plates, or <strong><a href="https://www.google.com/maps?q=Old+Vienna+Bakery+Pismo+Beach+CA" target="_blank" rel="noopener">Old Vienna Bakery</a></strong> for takeout to eat on your Sycamore deck.</div>
+        </li>
+        <li class="poi">
+          <div class="num">I</div>
+          <div class="name"><a href="https://pointsanluislighthouse.org/" target="_blank" rel="noopener">Point San Luis Lighthouse</a></div>
+          <span class="tag sight">SIGHT</span>
+          <span class="tag optional">OPTIONAL</span>
+          <div class="desc">1890s lighthouse, accessible only by trolley tour or a 3.5-mile trail. Book the tour a week ahead if interested; skip if you want to do nothing (recommended).</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ MAP 8: AVILA → PISMO ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">MAP 8</div>
+    <div class="segment-title">Avila Beach → Pismo Beach<small>15 mi · Avila Beach Dr → US-101 South · arrive by 1:00 PM</small></div>
+  </div>
+
+  <div class="segment">
+    <div class="strip-map">
+      <svg viewBox="0 0 240 800" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="marker" x="-4%" y="-4%" width="108%" height="108%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+          </filter>
+        </defs>
+        <text x="10" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" font-weight="bold">AVILA BEACH</text>
+        <text x="150" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c">. . . . . . . . . .</text>
+        <text x="230" y="16" font-size="8" font-family="Bree Serif" fill="#c8352c" text-anchor="end" font-weight="bold">PISMO BEACH</text>
+        <line x1="8" y1="22" x2="232" y2="22" stroke="#c8352c" stroke-width="0.6"/>
+        <text x="232" y="36" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">8</text>
+
+        <!-- ===== BASE GEOGRAPHY ===== -->
+        <!-- Point San Luis peninsula (top-west, juts into ocean) -->
+        <path d="M -5 30 L 75 30 L 80 45 Q 90 55 82 68 Q 65 80 55 95 L -5 100 Z"
+              fill="rgba(200,180,140,0.20)" stroke="#c8b898" stroke-width="0.5"/>
+        <circle cx="25" cy="55" r="1.8" fill="#c8621b" stroke="#26180b" stroke-width="0.4"/>
+        <text x="12" y="58" font-size="5" font-family="Bree Serif" fill="#4a3728" text-anchor="end">Pt San Luis</text>
+        <text x="30" y="48" font-size="4" font-family="Bree Serif" fill="#4a3728">Lighthouse</text>
+
+        <!-- SAN LUIS BAY (proper crescent-shaped inlet) -->
+        <path d="M 55 95 Q 65 130 78 180 Q 90 260 105 320 Q 118 380 128 440 Q 135 490 135 540 L 90 540 Q 82 480 78 420 Q 72 340 70 260 Q 68 180 60 130 L 55 95 Z"
+              fill="rgba(42,91,138,0.28)" stroke="rgba(42,91,138,0.5)" stroke-width="0.5"/>
+        <text x="95" y="280" font-size="7" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">SAN LUIS</text>
+        <text x="95" y="291" font-size="7" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">BAY</text>
+
+        <!-- Open Pacific south -->
+        <path d="M -5 550 L 60 550 Q 90 620 130 720 L 130 780 L -5 780 Z"
+              fill="rgba(42,91,138,0.22)" stroke="rgba(42,91,138,0.35)" stroke-width="0.5"/>
+        <text x="20" y="670" font-size="8" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Pacific</text>
+        <text x="20" y="682" font-size="8" font-family="Bree Serif" fill="#2a5b8a" font-style="italic">Ocean</text>
+
+        <!-- Coastal cliffs east of bay (Shell Beach cliffs) -->
+        <g stroke="#6b5a3a" stroke-width="0.8" fill="none" opacity="0.55">
+          <line x1="128" y1="380" x2="132" y2="390"/>
+          <line x1="132" y1="410" x2="136" y2="420"/>
+          <line x1="128" y1="440" x2="132" y2="450"/>
+          <line x1="132" y1="470" x2="136" y2="480"/>
+        </g>
+        <text x="115" y="440" font-size="4.5" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" text-anchor="end" transform="rotate(-90 115 440)">Shell Beach cliffs</text>
+
+        <!-- Pirate's Cove (between Avila and Shell Beach) -->
+        <path d="M 80 145 Q 90 155 100 148 L 95 165 Q 85 170 78 165 Z" fill="rgba(42,91,138,0.35)" stroke="rgba(42,91,138,0.5)" stroke-width="0.4"/>
+
+        <!-- Pismo State Beach dunes (bottom, south of Pismo) -->
+        <g opacity="0.35" fill="#d4b884">
+          <ellipse cx="60" cy="740" rx="12" ry="4"/>
+          <ellipse cx="80" cy="748" rx="14" ry="5"/>
+          <ellipse cx="45" cy="755" rx="10" ry="3"/>
+          <ellipse cx="95" cy="760" rx="12" ry="4"/>
+          <ellipse cx="65" cy="770" rx="15" ry="5"/>
+        </g>
+        <text x="70" y="778" font-size="5" font-family="Bree Serif" fill="#8a6a3a" font-style="italic" text-anchor="middle">Pismo Dunes</text>
+
+        <!-- Hills east (San Luis Range) -->
+        <path d="M 245 30 Q 190 60 195 140 T 195 260 Q 205 380 195 500 T 200 680 L 245 780 L 245 30 Z"
+              fill="rgba(200,180,140,0.18)" stroke="#c8b898" stroke-width="0.5"/>
+        <g stroke="#a89572" stroke-width="0.35" opacity="0.45">
+          <line x1="205" y1="80" x2="212" y2="98"/>
+          <line x1="215" y1="150" x2="222" y2="168"/>
+          <line x1="205" y1="220" x2="212" y2="238"/>
+          <line x1="215" y1="290" x2="222" y2="308"/>
+          <line x1="205" y1="360" x2="212" y2="378"/>
+          <line x1="215" y1="430" x2="222" y2="448"/>
+          <line x1="205" y1="500" x2="212" y2="518"/>
+          <line x1="215" y1="570" x2="222" y2="588"/>
+        </g>
+        <text x="221" y="380" font-size="5" font-family="Bree Serif" fill="#6b5a3a" font-style="italic" transform="rotate(-90 221 380)">San Luis Range</text>
+
+        <!-- ===== SIDE ROADS ===== -->
+        <!-- SR-1 (PCH) merges with US-101 in Pismo -->
+        <path d="M 138 620 Q 128 660 122 700" stroke="#8a7854" stroke-width="1.2" fill="none"/>
+        <g transform="translate(140,635)">
+          <rect x="-8" y="-5" width="16" height="11" fill="#c8352c" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">1</text>
+        </g>
+
+        <!-- Grover Beach exit (small town) -->
+        <path d="M 122 680 L 148 682" stroke="#8a7854" stroke-width="0.7" fill="none"/>
+        <circle cx="148" cy="682" r="1.5" fill="#26180b"/>
+        <text x="155" y="685" font-size="6" font-family="Bree Serif" fill="#26180b">Grover Beach</text>
+
+        <!-- Ave Diablo Cyn to lighthouse (existing dashed trail) -->
+        <path d="M 118 100 Q 90 90 55 80" stroke="#26180b" stroke-width="0.8" fill="none" stroke-dasharray="2 2" opacity="0.6"/>
+        <text x="80" y="76" font-size="4" font-family="Special Elite" fill="#4a3728" text-anchor="middle">Lighthouse trail →</text>
+
+        <!-- mileage -->
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold">
+          <text x="10" y="60">0</text>
+          <text x="10" y="260">4</text>
+          <text x="10" y="460">8</text>
+          <text x="10" y="640">12</text>
+          <text x="10" y="740">15</text>
+        </g>
+        <g font-family="Bree Serif" font-size="10" fill="#c8352c" font-weight="bold" text-anchor="end">
+          <text x="232" y="60">15</text>
+          <text x="232" y="260">11</text>
+          <text x="232" y="460">7</text>
+          <text x="232" y="640">3</text>
+          <text x="232" y="740">0</text>
+        </g>
+
+        <!-- HAND-DRAWN YELLOW HIGHLIGHTER -->
+        <g filter="url(#marker)">
+          <path d="M 120 55 Q 130 130 118 220 T 130 350 Q 118 460 135 560 T 120 720"
+                fill="none" stroke="rgba(255,235,55,0.28)" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 120 55 Q 130 130 118 220 T 130 350 Q 118 460 135 560 T 120 720"
+                fill="none" stroke="rgba(252,220,40,0.38)" stroke-width="18" stroke-linecap="round"
+                transform="translate(1.5,-0.5)"/>
+          <path d="M 120 55 Q 130 130 118 220 T 130 350 Q 118 460 135 560 T 120 720"
+                fill="none" stroke="rgba(245,205,25,0.30)" stroke-width="14" stroke-linecap="round"
+                transform="translate(-1,1)"/>
+        </g>
+        <path d="M 120 55 Q 130 130 118 220 T 130 350 Q 118 460 135 560 T 120 720"
+              fill="none" stroke="#26180b" stroke-width="1.8"/>
+        <g filter="url(#marker)" opacity="0.85">
+          <path d="M 106 704 L 120 738 L 134 704 L 120 720 Z"
+                fill="rgba(250,215,30,0.65)" stroke="rgba(230,190,20,0.60)" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Highway shields -->
+        <g transform="translate(140,300)">
+          <path d="M -10 -8 L 10 -8 L 10 5 L 0 12 L -10 5 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="0" y="3" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+
+        <!-- Pirate's Cove trail -->
+        <path d="M 118 200 L 90 205" stroke="#26180b" stroke-width="1" fill="none" stroke-dasharray="2 2"/>
+
+        <!-- Cities -->
+        <g font-family="Bree Serif" fill="#c8352c">
+          <circle cx="120" cy="55" r="4" fill="#c8352c" stroke="#26180b" stroke-width="0.8"/>
+          <text x="120" y="45" text-anchor="middle" font-size="11" font-weight="bold">AVILA BEACH</text>
+
+          <circle cx="88" cy="205" r="2" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="65" y="207" text-anchor="end" font-size="7" fill="#26180b">Pirate's Cove</text>
+
+          <circle cx="95" cy="350" r="2.5" fill="#c8621b" stroke="#26180b" stroke-width="0.5"/>
+          <text x="65" y="352" text-anchor="end" font-size="8" fill="#26180b" font-weight="bold">Shell Beach</text>
+
+          <circle cx="120" cy="720" r="6" fill="#c8352c" stroke="#26180b" stroke-width="1"/>
+          <text x="120" y="745" text-anchor="middle" font-size="12" font-weight="bold">PISMO BEACH</text>
+          <text x="120" y="758" text-anchor="middle" font-size="8" fill="#26180b">· REUNION ·</text>
+        </g>
+
+        <!-- POI badges -->
+        <g font-family="Alfa Slab One" font-size="9" fill="#f4ede1">
+          <rect x="65" y="195" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="205" text-anchor="middle">28</text>
+
+          <rect x="65" y="340" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="72" y="350" text-anchor="middle">29</text>
+
+          <rect x="150" y="540" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="157" y="550" text-anchor="middle">30</text>
+
+          <rect x="150" y="640" width="14" height="14" fill="#c8352c" stroke="#26180b" stroke-width="0.5"/>
+          <text x="157" y="650" text-anchor="middle">31</text>
+        </g>
+
+        <!-- End stamp -->
+        <g transform="translate(120, 400) rotate(-6)">
+          <text x="0" y="0" text-anchor="middle" font-size="10" font-family="Alfa Slab One" fill="#9c2b23" opacity="0.55">END OF ROUTE</text>
+        </g>
+
+        <g transform="translate(200, 100)">
+          <circle cx="0" cy="0" r="14" fill="#faf4e6" stroke="#26180b" stroke-width="0.8"/>
+          <polygon points="0,-10 3,0 0,10 -3,0" fill="#c8352c"/>
+          <text x="0" y="-16" text-anchor="middle" font-size="8" font-family="Alfa Slab One" fill="#26180b">N</text>
+        </g>
+
+        <text x="10" y="790" font-size="8" font-family="Bree Serif" fill="#c8352c">75-10</text>
+        <text x="230" y="790" font-size="10" font-family="Alfa Slab One" fill="#c8352c" text-anchor="end">8</text>
+      </svg>
+    </div>
+
+    <ul class="poi-list">
+      <li class="poi">
+        <div class="num">28</div>
+        <div class="name">Pirate's Cove overlook</div>
+        <span class="tag sight">SIGHT</span>
+        <span class="tag detour">DETOUR +5 min RT</span>
+        <div class="desc">Between Avila and Shell Beach, a short dirt turn-off leads to cliff parking above a hidden crescent beach (clothing-optional, per California tradition). Even if you don't walk down, the view of the cove and sea caves is worth five minutes.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">29</div>
+        <div class="name">Shell Beach cliff walk</div>
+        <span class="tag stretch">STRETCH</span>
+        <div class="desc">Park at <a href="https://www.google.com/maps?q=Margo+Dodd+Park+Shell+Beach+CA" target="_blank" rel="noopener">Margo Dodd Park</a>. Ten-minute stroll along the cliffs — sea lions barking below, tide pools if the tide's out, pelicans overhead.</div>
+        <div class="personal"><strong>FOR KAREN:</strong> This is your morning walk. Bring the coffee, watch for sea lions and pelicans, kneel down at the tide pools. No one back home is waiting for you to make anyone breakfast.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">30</div>
+        <div class="name"><a href="https://www.splashcafe.com/" target="_blank" rel="noopener">Splash Café</a> — clam chowder</div>
+        <span class="tag food">FOOD</span>
+        <span class="tag cheap">CHEAP</span>
+        <span class="tag weird">WEIRD</span>
+        <div class="desc">The single most-Pismo thing you can eat. Clam chowder in a sourdough bread bowl. Absolute classic, lines out the door, $10-12. Depending on when reunion lunch is scheduled, this could be pre-lunch or you skip it. Aaron should try it once.</div>
+        <div class="personal"><strong>FOR AARON:</strong> American chowder-in-a-bread-bowl is a genre. You need one data point.</div>
+      </li>
+
+      <li class="poi">
+        <div class="num">31</div>
+        <div class="name"><a href="https://www.oldwestcinnamonrolls.com/" target="_blank" rel="noopener">Old West Cinnamon Rolls</a> (bakery, downtown Pismo)</div>
+        <span class="tag cheap">CHEAP</span>
+        <span class="tag weird">WEIRD</span>
+        <div class="desc">Been here since 1985. Massive cinnamon rolls, $6, made in-house all morning. If the reunion needs a house-warming gift or the trio needs a road-fuel finish, grab a box.</div>
+      </li>
+    </ul>
+
+    <div class="logistics" style="margin-top: 20px;">
+      <h3>ARRIVAL</h3>
+      <div class="row"><span>TARGET</span><span>Pismo Beach by 1:00 PM Thursday Aug 20</span></div>
+      <div class="row"><span>BUDGET</span><span>Leave Sycamore no later than 11:30 AM to allow one stop</span></div>
+      <div class="row"><span>WELCOME</span><span>Family. Reunion. You made it.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ BACK PAGE ============================ -->
+<div class="page">
+  <div class="page-header">
+    <div class="map-num">END</div>
+    <div class="segment-title">Reference<small>Phone numbers · Backup ideas · Bookings</small></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="col-title">Book Now</div>
+      <div class="logistics">
+        <div class="row"><span><a href="https://pasoroblesinn.com/" target="_blank" rel="noopener">PASO ROBLES INN</a></span><span>(800) 676-1713</span></div>
+        <div class="row"><span><a href="https://sycamoresprings.com/" target="_blank" rel="noopener">SYCAMORE MINERAL</a></span><span>(805) 595-7302</span></div>
+        <div class="row"><span>EMBER (Arroyo Gr.)</span><span>(805) 474-7700</span></div>
+        <div class="row"><span>FISH GAUCHO</span><span>(805) 226-2000</span></div>
+        <div class="row"><span>LES PETITES CANAILLES</span><span>(805) 296-3754</span></div>
+      </div>
+
+      <div class="col-title" style="margin-top: 30px;">Diners at a Glance</div>
+      <div class="logistics">
+        <div class="row"><span><a href="https://rickandanns.com/" target="_blank" rel="noopener">Rick & Ann's</a> · Berkeley</span><span>chicken sausage</span></div>
+        <div class="row"><span>Ole's · Alameda</span><span>sourdough waffles</span></div>
+        <div class="row"><span>Original Jack's · Gilroy</span><span>corned beef hash</span></div>
+        <div class="row"><span><a href="https://www.google.com/maps?q=La+Fogata+Salinas+CA" target="_blank" rel="noopener">La Fogata</a> · Salinas</span><span>huevos rancheros</span></div>
+        <div class="row"><span>Wagon Wheel · King City</span><span>the real deal</span></div>
+        <div class="row"><span>Louisa's · SLO</span><span>chicken sausage</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="col-title">If Things Slip</div>
+      <div class="note">
+        <strong>Running late Tuesday?</strong> Skip stops 3-8. The route is 4 hours flat if you don't stop.
+        Paso restaurants will hold reservations up to 8pm.
+      </div>
+      <div class="note">
+        <strong>Weather curveball?</strong> Central Coast in August = fog until noon, then sun. Avila often
+        sunny when SLO is foggy. Don't panic if you wake up in gray at Sycamore — it burns off.
+      </div>
+      <div class="note">
+        <strong>Traffic?</strong> Bay Area outbound Tue morning: leave before 7:30 AM or after 10 AM.
+        Southbound 101 through King City-area is nearly always clear.
+      </div>
+
+      <div class="col-title" style="margin-top: 30px;">Emergency & Detour</div>
+      <div class="logistics">
+        <div class="row"><span><a href="https://roads.dot.ca.gov/" target="_blank" rel="noopener">CALTRANS ROADS</a></span><span>1-800-427-7623</span></div>
+        <div class="row"><span><a href="https://www.chp.ca.gov/" target="_blank" rel="noopener">CHP DISPATCH</a></span><span>*11 from mobile</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <div class="stamp stamp-olive">FILED · JULY 2026</div>
+    <div style="margin-top: 20px; font-size: 12px; letter-spacing: 3px; color: var(--ink-soft);">
+      END OF ROUTE · SAFE TRAVELS
+    </div>
+  </div>
+</div>
+
+</div><!-- /book -->
+
+<div class="controls no-print">
+  <button onclick="window.print()">🖨 PRINT</button>
+</div>
+
+</body>
+</html>
