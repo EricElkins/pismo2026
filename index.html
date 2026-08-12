@@ -404,13 +404,43 @@
           <path d="M -10 -6 L 10 -6 L 10 6 L -10 6 Z" fill="#2a5b8a" stroke="#26180b" stroke-width="0.4"/>
           <text x="0" y="3" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">580</text>
         </g>
-        <!-- SR-92 San Mateo Bridge west -->
-        <path d="M 118 218 L 68 220 L 30 215" stroke="#8a7854" stroke-width="1" fill="none"/>
+        <!-- SR-92 San Mateo Bridge west (now drawn thicker for alt route) -->
+        <path d="M 118 218 Q 90 216 60 214 L 25 213" stroke="#8a7854" stroke-width="1.6" fill="none"/>
         <g transform="translate(70,218)">
           <rect x="-9" y="-5" width="18" height="11" fill="#6b7a3a" stroke="#26180b" stroke-width="0.4"/>
           <text x="0" y="3.5" text-anchor="middle" font-size="7" font-family="Alfa Slab One" fill="#f4ede1">92</text>
         </g>
         <text x="47" y="232" font-size="4.5" font-family="Special Elite" fill="#4a3728" text-anchor="middle">San Mateo Br</text>
+
+        <!-- ===== PENINSULA GEOGRAPHY (for Bridge Variation) ===== -->
+        <!-- Peninsula land strip on far left -->
+        <path d="M -5 55 L 28 60 L 25 130 L 22 210 L 26 300 L 34 380 L 48 440 L -5 440 Z"
+              fill="rgba(210, 190, 150, 0.22)" stroke="#c8b898" stroke-width="0.4"/>
+
+        <!-- Peninsula US-101 running down the west side -->
+        <path d="M 22 65 L 20 130 L 22 213 L 26 285 L 32 360 L 45 425" stroke="#8a7854" stroke-width="1.5" fill="none"/>
+        <g transform="translate(20, 155)">
+          <path d="M -8 -6 L 8 -6 L 8 4 L 0 10 L -8 4 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="2.5" text-anchor="middle" font-size="6.5" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+        <g transform="translate(28, 335)">
+          <path d="M -8 -6 L 8 -6 L 8 4 L 0 10 L -8 4 Z" fill="#c8352c" stroke="#26180b" stroke-width="0.4"/>
+          <text x="0" y="2.5" text-anchor="middle" font-size="6.5" font-family="Alfa Slab One" fill="#f4ede1">101</text>
+        </g>
+
+        <!-- Peninsula city dots (order top to bottom) -->
+        <g font-family="Bree Serif" fill="#26180b">
+          <circle cx="22" cy="213" r="2" fill="#26180b"/>
+          <text x="55" y="205" font-size="6.5" fill="#26180b" font-style="italic">San Mateo</text>
+          <circle cx="23" cy="250" r="1.5" fill="#26180b"/>
+          <text x="55" y="252" font-size="6" fill="#26180b" font-style="italic">Redwood City</text>
+          <circle cx="26" cy="290" r="1.8" fill="#26180b"/>
+          <text x="55" y="292" font-size="6.5" fill="#26180b" font-style="italic">Palo Alto</text>
+          <circle cx="30" cy="345" r="1.5" fill="#26180b"/>
+          <text x="60" y="347" font-size="6" fill="#26180b" font-style="italic">Mountain View</text>
+          <circle cx="36" cy="395" r="1.5" fill="#26180b"/>
+          <text x="60" y="397" font-size="6" fill="#26180b" font-style="italic">Sunnyvale</text>
+        </g>
         <!-- SR-84 Dumbarton Bridge west -->
         <path d="M 122 290 L 68 292 L 30 288" stroke="#8a7854" stroke-width="1" fill="none"/>
         <g transform="translate(70,290)">
@@ -461,6 +491,24 @@
           <text x="232" y="450">27</text>
           <text x="232" y="580">7</text>
           <text x="232" y="740">0</text>
+        </g>
+
+        <!-- HAND-DRAWN BLUE HIGHLIGHTER (Bridge Variation alt route) -->
+        <g filter="url(#marker)">
+          <path d="M 118 208 Q 88 210 55 213 L 22 214 L 22 260 Q 24 320 28 380 Q 55 425 118 437"
+                fill="none" stroke="rgba(80,150,220,0.28)" stroke-width="22" stroke-linecap="round"/>
+          <path d="M 118 208 Q 88 210 55 213 L 22 214 L 22 260 Q 24 320 28 380 Q 55 425 118 437"
+                fill="none" stroke="rgba(60,130,200,0.36)" stroke-width="16" stroke-linecap="round"
+                transform="translate(1.5,-0.5)"/>
+          <path d="M 118 208 Q 88 210 55 213 L 22 214 L 22 260 Q 24 320 28 380 Q 55 425 118 437"
+                fill="none" stroke="rgba(50,110,180,0.30)" stroke-width="13" stroke-linecap="round"
+                transform="translate(-1,1)"/>
+        </g>
+        <!-- ALT route label -->
+        <g transform="translate(58,170) rotate(-8)">
+          <rect x="-28" y="-7" width="56" height="14" fill="rgba(255,255,255,0.90)" stroke="#2a5b8a" stroke-width="0.6"/>
+          <text x="0" y="-1" text-anchor="middle" font-size="6.5" font-family="Alfa Slab One" fill="#2a5b8a">ALT · BRIDGE</text>
+          <text x="0" y="6" text-anchor="middle" font-size="5.5" font-family="Special Elite" fill="#4a3728">+25 min</text>
         </g>
 
         <!-- HAND-DRAWN YELLOW HIGHLIGHTER (3 layered strokes + wobble) -->
