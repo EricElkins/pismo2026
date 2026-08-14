@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Miss Sydney Hannah Cohen · A Packing List for Pismo Beach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Caveat&family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #f4ead3;
+    --parchment-shadow: #e0d3b0;
+    --ink: #2a1b0a;
+    --ink-soft: #5a3f22;
+    --wax: #7a1a1a;
+    --gold: #a8802e;
+    --sky: #26548a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #2a2419;
+    background-image: repeating-linear-gradient(45deg, #2a2419 0 20px, #322a1e 20px 40px);
+    color: var(--ink);
+    font-family: 'IM Fell English', 'Georgia', serif;
+    line-height: 1.55;
+  }
+  body { padding: 40px 0; }
+
+  .letter {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--parchment);
+    background-image:
+      radial-gradient(ellipse at 15% 12%, rgba(50, 25, 5, 0.06), transparent 60%),
+      radial-gradient(ellipse at 88% 92%, rgba(50, 25, 5, 0.07), transparent 55%),
+      radial-gradient(ellipse at 60% 55%, rgba(80, 50, 20, 0.03), transparent 50%),
+      linear-gradient(180deg, var(--parchment) 0%, #ecdfba 100%);
+    padding: 70px 80px 90px;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.55), inset 0 0 80px rgba(120, 80, 40, 0.09);
+    border-radius: 3px;
+  }
+
+  /* Torn/burnt edge effect on top */
+  .letter::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, transparent 0%, rgba(90,50,20,0.15) 20%, transparent 40%, rgba(90,50,20,0.10) 60%, transparent 80%);
+  }
+
+  /* WAX SEAL top right */
+  .seal {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 88px;
+    height: 88px;
+    background: radial-gradient(circle at 35% 30%, #9a2a2a 0%, #7a1a1a 50%, #4a1010 90%);
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.35), inset 0 -4px 8px rgba(0,0,0,0.4), inset 0 4px 8px rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IM Fell English SC', serif;
+    color: #f4d494;
+    font-size: 9px;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    transform: rotate(-8deg);
+  }
+  .seal-inner {
+    padding: 6px;
+  }
+
+  /* Owl SVG — perched at top, above the address */
+  .owl-svg {
+    display: block;
+    margin: 0 auto 24px;
+    width: 82px;
+    height: 100px;
+    opacity: 0.92;
+  }
+
+  /* Wand divider */
+  .wand-divider {
+    display: block;
+    margin: 20px auto 26px;
+    width: 220px;
+    height: 20px;
+    opacity: 0.75;
+  }
+
+  /* Star sparkle */
+  .sparkle {
+    color: var(--gold);
+    font-size: 12px;
+    display: inline-block;
+    transform: translateY(-2px);
+    margin: 0 4px;
+    opacity: 0.85;
+  }
+
+  /* Book stack at bottom */
+  .books-svg {
+    display: block;
+    margin: 30px auto 0;
+    width: 130px;
+    height: 60px;
+    opacity: 0.75;
+  }
+
+  /* ADDRESS BLOCK */
+  .address {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .address .to {
+    font-style: normal;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 18px;
+    color: var(--ink);
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+  }
+  .delivery {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  hr.rule {
+    border: none;
+    border-top: 1px solid var(--ink-soft);
+    margin: 30px 0 25px;
+    opacity: 0.55;
+  }
+  hr.rule.thin { border-top: 1px dotted var(--ink-soft); margin: 20px 0; opacity: 0.5; }
+
+  h1.title {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 44px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 10px 0 6px;
+    color: var(--ink);
+    font-weight: normal;
+    line-height: 1.1;
+  }
+  .subtitle {
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 30px;
+  }
+
+  .greeting {
+    font-family: 'IM Fell English', serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .greeting p { margin: 0 0 12px 0; }
+
+  section {
+    margin-top: 30px;
+  }
+
+  h2.sect {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--ink);
+    margin: 0 0 4px;
+    text-align: center;
+    font-weight: normal;
+  }
+  h2.sect::before, h2.sect::after {
+    content: " § ";
+    color: var(--gold);
+  }
+  .sect-note {
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  ul.list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  ul.list li {
+    padding: 4px 0 4px 26px;
+    position: relative;
+  }
+  ul.list li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+  ul.list li strong { color: var(--wax); }
+  ul.list li em { font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink-soft); }
+
+  .aside {
+    background: rgba(168, 128, 46, 0.10);
+    border-left: 3px solid var(--gold);
+    padding: 12px 18px;
+    margin: 14px 0;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .aside strong { font-style: normal; color: var(--wax); font-family: 'IM Fell English SC', serif; letter-spacing: 1px; }
+
+  ol.duties {
+    list-style: none;
+    padding: 0;
+    counter-reset: duty;
+    margin: 12px 0 0 20px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  ol.duties li {
+    counter-increment: duty;
+    padding: 6px 0 6px 34px;
+    position: relative;
+  }
+  ol.duties li::before {
+    content: counter(duty, upper-roman) ".";
+    position: absolute;
+    left: 0;
+    font-family: 'IM Fell English SC', serif;
+    color: var(--wax);
+    letter-spacing: 1px;
+    top: 6px;
+  }
+
+  .signoff {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--ink-soft);
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .signature {
+    font-family: 'Caveat', cursive;
+    font-size: 34px;
+    color: var(--wax);
+    line-height: 1;
+    margin: 8px 0 4px;
+  }
+  .signature-title {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--ink-soft);
+  }
+
+  .revstamp {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
+  .controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--parchment);
+    padding: 10px 16px;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    font-family: 'IM Fell English SC', serif;
+    z-index: 100;
+  }
+  .controls button {
+    background: var(--wax);
+    color: var(--parchment);
+    border: none;
+    padding: 8px 16px;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    letter-spacing: 2px;
+  }
+  .controls button:hover { background: #4a1010; }
+
+  @media print {
+    body { background: white; padding: 0; background-image: none; }
+    .letter { box-shadow: none; margin: 0; max-width: none; padding: 0.7in 0.9in 0.9in; }
+    .no-print { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="letter">
+
+  <!-- Owl bearing letter -->
+  <svg class="owl-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#3a2811" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" fill="none">
+      <!-- Body -->
+      <path d="M 25 55 C 25 30 40 22 50 22 C 60 22 75 30 75 55 C 75 90 66 106 50 106 C 34 106 25 90 25 55 Z" fill="rgba(120, 80, 40, 0.10)"/>
+      <!-- Ear tufts -->
+      <path d="M 32 28 L 30 14 L 39 25 Z" fill="#3a2811" stroke="none"/>
+      <path d="M 68 28 L 70 14 L 61 25 Z" fill="#3a2811" stroke="none"/>
+      <!-- Eye rings -->
+      <circle cx="40" cy="52" r="9" fill="rgba(244,234,211,0.95)" stroke-width="1.8"/>
+      <circle cx="60" cy="52" r="9" fill="rgba(244,234,211,0.95)" stroke-width="1.8"/>
+      <!-- Pupils -->
+      <circle cx="40" cy="52" r="4" fill="#2a1b0a" stroke="none"/>
+      <circle cx="60" cy="52" r="4" fill="#2a1b0a" stroke="none"/>
+      <circle cx="41.5" cy="50" r="1.2" fill="#f4ead3" stroke="none"/>
+      <circle cx="61.5" cy="50" r="1.2" fill="#f4ead3" stroke="none"/>
+      <!-- Beak -->
+      <path d="M 47 62 L 50 71 L 53 62 Z" fill="#a8802e" stroke="#5a3f22" stroke-width="1"/>
+      <!-- Chest feathers -->
+      <path d="M 33 78 Q 42 84 50 80 Q 58 84 67 78" stroke-width="1.2" opacity="0.55"/>
+      <path d="M 35 90 Q 42 94 50 91 Q 58 94 65 90" stroke-width="1.2" opacity="0.55"/>
+      <!-- Feet -->
+      <line x1="45" y1="106" x2="44" y2="112" stroke-width="1.4"/>
+      <line x1="55" y1="106" x2="56" y2="112" stroke-width="1.4"/>
+      <!-- Letter clutched in feet -->
+      <rect x="42" y="112" width="16" height="7" fill="#f4ead3" stroke-width="0.9"/>
+      <line x1="42" y1="115.5" x2="58" y2="115.5" stroke-width="0.4"/>
+    </g>
+  </svg>
+
+  <!-- Wax seal, upgraded with lightning bolt -->
+  <div class="seal">
+    <div class="seal-inner">
+      <svg viewBox="0 0 20 30" width="14" height="20" style="display:block; margin: 0 auto 2px;">
+        <path d="M 12 2 L 4 16 L 10 16 L 6 28 L 16 12 L 10 12 Z" fill="#f4d494" stroke="#4a1010" stroke-width="0.6"/>
+      </svg>
+      BUBI 80
+    </div>
+  </div>
+
+  <div class="address">
+    <div class="to">MISS SYDNEY HANNAH COHEN</div>
+    The Cupboard Under the Stairs<br/>
+    A House with Ongoing Renovations<br/>
+    Albany, California
+  </div>
+  <div class="delivery">By Owl Post · Delivered to Albany · Not to be opened in the presence of Muggles</div>
+
+  <hr class="rule"/>
+
+  <h1 class="title">A Packing List for Pismo Beach</h1>
+  <div class="subtitle">Three Nights &nbsp;·&nbsp; August 20th through 23rd, 2026 &nbsp;·&nbsp; By Muggle Reckoning</div>
+
+  <svg class="wand-divider" viewBox="0 0 220 20" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#5a3f22" stroke-linecap="round" fill="none">
+      <!-- Wand -->
+      <line x1="20" y1="14" x2="150" y2="8" stroke-width="1.6"/>
+      <!-- Grip texture -->
+      <line x1="20" y1="14" x2="35" y2="13" stroke-width="2.4"/>
+      <!-- Sparks radiating from tip -->
+      <path d="M 155 8 L 162 4 M 155 8 L 162 8 M 155 8 L 162 12" stroke-width="0.8" opacity="0.75"/>
+      <!-- Stars -->
+      <path d="M 172 5 l 1.5 3 l 3 0.5 l -2.2 2 l 0.5 3 l -2.8 -1.5 l -2.8 1.5 l 0.5 -3 l -2.2 -2 l 3 -0.5 z" fill="#a8802e" stroke="#a8802e" stroke-width="0.5"/>
+      <path d="M 190 12 l 1 2 l 2 0.3 l -1.5 1.3 l 0.3 2 l -1.8 -1 l -1.8 1 l 0.3 -2 l -1.5 -1.3 l 2 -0.3 z" fill="#a8802e" stroke="#a8802e" stroke-width="0.4"/>
+      <path d="M 202 6 l 0.8 1.6 l 1.7 0.3 l -1.2 1 l 0.2 1.7 l -1.5 -0.9 l -1.5 0.9 l 0.2 -1.7 l -1.2 -1 l 1.7 -0.3 z" fill="#a8802e" stroke="#a8802e" stroke-width="0.4"/>
+    </g>
+  </svg>
+
+  <div class="greeting">
+    <p>Dear Miss Cohen,</p>
+    <p>
+      You've been officially summoned to Pismo Beach for the <strong>Great 80th Birthday Celebration of Bubi and Tante Bubi</strong>. This is a matter of family, seawater, and cake, in roughly that order.
+    </p>
+    <p>
+      Below is your complete packing list. Everything is required. Unless it isn't.
+    </p>
+  </div>
+
+  <section>
+    <h2 class="sect">The Wardrobe</h2>
+    <div class="sect-note">Pismo mornings are cold and foggy; afternoons warm up. Pack for both.</div>
+    <ul class="list">
+      <li><strong>Two swimsuits.</strong> One dry, one drying. Rotate.</li>
+      <li>A <strong>beach cover-up</strong> or an oversized t-shirt.</li>
+      <li>A <strong>warm hoodie or sweatshirt.</strong> <em>Do not skip this.</em> Pismo mornings are shockingly cold and no one will believe you.</li>
+      <li>A <strong>windbreaker</strong> or light jacket for cliff walks.</li>
+      <li>Two pairs of <strong>long pants</strong> — jeans, leggings, whatever.</li>
+      <li>One pair of <strong>shorts</strong> for the warm afternoons.</li>
+      <li>Four or five <strong>t-shirts.</strong></li>
+      <li><strong>Pajamas.</strong></li>
+      <li><strong>Underwear × 5, socks × 5.</strong></li>
+      <li><strong>Sneakers</strong> for walking, plus <strong>flip-flops or sandals</strong> for the beach.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="sect">Slightly Dressier Attire</h2>
+    <div class="sect-note">It's a pretty casual weekend, so a single "slightly nicer than beach clothes" outfit does it.</div>
+    <ul class="list">
+      <li>One <strong>slightly-dressier outfit</strong> — something that says <em>"I love you, Bubi and Tante Bubi"</em> without needing to say it out loud. Not beach clothes; not a ballgown either.</li>
+      <li><em>Optional but excellent:</em> a handwritten card for each of them. Airplane time is the best time to make one — two pieces of blank paper, some good pens, and 40,000 feet of altitude will do most of the work for you.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="sect">The Beach Kit</h2>
+    <ul class="list">
+      <li><strong>Sun hat</strong> — wide brim, wizardly, or a baseball cap. Both acceptable.</li>
+      <li><strong>Sunglasses.</strong> Muggle version. No anti-Basilisk enchantment required.</li>
+      <li>Reusable <strong>water bottle.</strong></li>
+      <li>A <strong>beach towel</strong> (check with your mum first — the reunion house may provide).</li>
+      <li><strong>Sunscreen — don't pack it.</strong> Remind your mum to put a bottle in the car when she leaves for the road trip. She's the SPF Ministry now. One less thing for you to fit in a 3-oz bottle.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="sect">A Note on Muggle Liquid Restrictions</h2>
+    <div class="aside">
+      <strong>Important:</strong> The <em>Transportation Security Administration</em> — a strict Muggle regulatory body — permits no liquid, gel, cream, or paste container larger than <strong>3 ounces (100 mL)</strong> in your carry-on. This is a very odd law, but very firmly enforced, and no wand-waving is permitted at the security checkpoint.
+    </div>
+    <p style="font-family: 'IM Fell English', serif; font-size: 15px; line-height: 1.6; margin: 10px 0;">
+      Because you're flying with your dad, ask him nicely to put any full-size things in his <strong>checked bag</strong>. Otherwise, hunt down the little 3-oz travel versions of:
+    </p>
+    <ul class="list" style="margin-top: 6px;">
+      <li>Shampoo, conditioner, body wash</li>
+      <li>Any skin-care lotions or creams</li>
+      <li>Toothpaste (or send a full-size in checked)</li>
+    </ul>
+    <p style="font-family: 'IM Fell English', serif; font-size: 14px; font-style: italic; color: var(--ink-soft); margin: 8px 0;">
+      Sunscreen is handled by Mom on the road-trip side — see the Beach Kit above.
+    </p>
+    <p style="font-family: 'IM Fell English', serif; font-size: 15px; line-height: 1.6; margin: 12px 0;">
+      Everything else — <strong>toothbrush, hair ties, hair brush, chapstick, deodorant stick</strong> — goes in your regular bag with no restrictions. Solids fly free.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="sect">Required Reading</h2>
+    <div class="sect-note">You are an avid reader. Pismo mornings are foggy and quiet. This is the greatest possible combination.</div>
+    <ul class="list">
+      <li>At least <strong>TWO books</strong> — three nights means three bedtimes, plus airplane time, and you know how you are.</li>
+      <li>A <strong>book light.</strong> Grown-ups sharing rooms will silently thank you.</li>
+      <li>A <strong>journal</strong> for anything worth remembering.</li>
+      <li>A pen. Or three. Pens have opinions and disappear.</li>
+    </ul>
+    <div class="aside">
+      <strong>A suggestion:</strong> If you're revisiting Hogwarts, <em>Prisoner of Azkaban</em> is the correct choice for coastal reading — dementors love the fog, and you'll get the reference. If you're reading something new instead, come find your Uncle Eric on day one and tell him what.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sect">Objects of Interest</h2>
+    <ul class="list">
+      <li>A <strong>deck of cards.</strong></li>
+      <li><strong>Uno</strong>, or a card game that plays with cousins.</li>
+      <li>Anything you'd like to <strong>teach the older cousins.</strong> They do not know as much as they think they do, and you are perfectly positioned to help with this.</li>
+      <li>A <strong>small bag</strong> for beach things (so towels don't drown your book).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="sect">A Cousin's Duty</h2>
+    <div class="sect-note">Being the youngest of the cousins is an office, not a demotion.</div>
+    <ol class="duties">
+      <li>You are <strong>officially permitted</strong> to correct any adult who gets a Harry Potter fact wrong. Do so kindly, but firmly.</li>
+      <li>You are the <strong>designated arbiter</strong> of who at the reunion is fun and who is boring. Your verdicts are final.</li>
+      <li>You get <strong>first choice of seat</strong> at the birthday dinner. Uncle Eric will personally enforce this.</li>
+      <li>You have been casting a wordless <strong>spell on Bubi and Tante Bubi</strong> since the day you were born. It has no incantation. It works by walking into the room. <strong>Bring the spell.</strong> The rest of this list is negotiable.</li>
+    </ol>
+  </section>
+
+  <div class="signoff">
+    <p>With considerable affection, and by the authority vested in me by no one in particular,</p>
+    <div class="signature">Uncle Eric</div>
+    <div class="signature-title">HEAD OF TRAVEL PREPARATIONS · OFFICE OF THE 80TH BIRTHDAY FEAST</div>
+  </div>
+
+  <!-- Little stack of books at the bottom -->
+  <svg class="books-svg" viewBox="0 0 130 60" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#3a2811" stroke-width="1.2" stroke-linecap="round" fill="none">
+      <!-- Bottom book -->
+      <rect x="15" y="42" width="100" height="12" fill="rgba(122, 26, 26, 0.18)"/>
+      <line x1="18" y1="46" x2="112" y2="46" opacity="0.4"/>
+      <line x1="18" y1="50" x2="60" y2="50" opacity="0.35"/>
+      <!-- Middle book -->
+      <rect x="22" y="30" width="86" height="12" fill="rgba(168, 128, 46, 0.20)"/>
+      <line x1="25" y1="34" x2="105" y2="34" opacity="0.4"/>
+      <line x1="25" y1="38" x2="70" y2="38" opacity="0.35"/>
+      <!-- Top book (angled slightly) -->
+      <g transform="rotate(-3, 65, 20)">
+        <rect x="30" y="18" width="70" height="12" fill="rgba(38, 84, 138, 0.18)"/>
+        <line x1="33" y1="22" x2="97" y2="22" opacity="0.4"/>
+        <line x1="33" y1="26" x2="55" y2="26" opacity="0.35"/>
+      </g>
+      <!-- Bookmark ribbon -->
+      <path d="M 82 30 L 82 52 L 78 48 L 74 52 L 74 30" fill="rgba(122, 26, 26, 0.5)" stroke-width="0.8"/>
+      <!-- Small star -->
+      <path d="M 118 10 l 1 2 l 2 0.3 l -1.5 1.3 l 0.3 2 l -1.8 -1 l -1.8 1 l 0.3 -2 l -1.5 -1.3 l 2 -0.3 z" fill="#a8802e" stroke="#a8802e" stroke-width="0.4"/>
+      <path d="M 12 8 l 0.8 1.6 l 1.7 0.3 l -1.2 1 l 0.2 1.7 l -1.5 -0.9 l -1.5 0.9 l 0.2 -1.7 l -1.2 -1 l 1.7 -0.3 z" fill="#a8802e" stroke="#a8802e" stroke-width="0.4"/>
+    </g>
+  </svg>
+
+  <div class="revstamp">FILED · REV. 2026-08-13</div>
+</div>
+
+<div class="controls no-print">
+  <button onclick="window.print()">🖨 PRINT</button>
+</div>
+
+</body>
+</html>
